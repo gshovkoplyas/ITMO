@@ -15,12 +15,13 @@ public class Main {
 			int key = Integer.parseInt(input[1]);
 			switch (request) {
 			case "insert":
-				//if (key == -4) {
-					//System.out.println("dat shit");
-				//}
+				// if (key == 7) {
+				// System.out.println("dat shit");
+				// }
 				BlackRedTree.insert(key);
-				//System.out.println("insert: " + key);
-				//BlackRedTree.print();
+				// System.out.println("insert: " + key);
+				// System.out.println("size = " + BlackRedTree.size());
+				// BlackRedTree.print();
 				break;
 			case "exists":
 				if (BlackRedTree.exists(key)) {
@@ -173,6 +174,17 @@ public class Main {
 				}
 			}
 
+			private int recSize() {
+				int result = 0;
+				if (left != null) {
+					result += left.recSize();
+				}
+				if (right != null) {
+					result += right.recSize();
+				}
+				return 1 + result;
+			}
+
 			private int upperBound(int request, int curmax) {
 				if (data > request) {
 					if (left == null) {
@@ -198,6 +210,25 @@ public class Main {
 						return curmin;
 					}
 					return left.lowerBound(request, curmin);
+				}
+			}
+
+			private void overBalance() {
+				if (left != null) {
+					/*
+					 * if(left.parent != this) { System.out.println("FUCK"); }
+					 */
+					left.parent = this;
+					left.overBalance();
+
+				}
+				if (right != null) {
+					/*
+					 * if(right.parent != this) { System.out.println("FUCK"); }
+					 */
+					right.parent = this;
+					right.overBalance();
+
 				}
 			}
 
@@ -289,6 +320,13 @@ public class Main {
 			write(" ", root);
 		}
 
+		public static int size() {
+			if (root == null) {
+				return 0;
+			}
+			return root.recSize();
+		}
+
 		private static void write(String prefix, Node tree) {
 			if (tree != null) {
 				write(prefix + " ", tree.left);
@@ -306,6 +344,7 @@ public class Main {
 				root.add(newData);
 				while (root.parent != null)
 					root = root.parent;
+				root.overBalance();
 			}
 		}
 
