@@ -15,7 +15,12 @@ public class Main {
 			int key = Integer.parseInt(input[1]);
 			switch (request) {
 			case "insert":
+				//if (key == -4) {
+					//System.out.println("dat shit");
+				//}
 				BlackRedTree.insert(key);
+				//System.out.println("insert: " + key);
+				//BlackRedTree.print();
 				break;
 			case "exists":
 				if (BlackRedTree.exists(key)) {
@@ -197,6 +202,9 @@ public class Main {
 			}
 
 			private void balance() {
+				if (color == colors.BLACK) {
+					return;
+				}
 				Node parent, grandpa, uncle;
 				parent = this.parent;
 				if (parent == null) {
@@ -223,8 +231,11 @@ public class Main {
 				} else {
 					if (parent.data < grandpa.data) {
 						if (data > parent.data) {
+							parent.right = left;
+							if (left != null) {
+								left.parent = parent;
+							}
 							left = parent;
-							parent.right = null;
 							parent.parent = this;
 							this.parent = grandpa;
 							grandpa.left = this;
@@ -245,8 +256,11 @@ public class Main {
 						}
 					} else {
 						if (data < parent.data) {
+							parent.left = right;
+							if (right != null) {
+								right.parent = parent;
+							}
 							right = parent;
-							parent.left = null;
 							parent.parent = this;
 							this.parent = grandpa;
 							grandpa.right = this;
