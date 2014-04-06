@@ -15,13 +15,7 @@ public class Main {
 			int key = Integer.parseInt(input[1]);
 			switch (request) {
 			case "insert":
-				// if (key == 7) {
-				// System.out.println("dat shit");
-				// }
 				BlackRedTree.insert(key);
-				// System.out.println("insert: " + key);
-				// System.out.println("size = " + BlackRedTree.size());
-				// BlackRedTree.print();
 				break;
 			case "exists":
 				if (BlackRedTree.exists(key)) {
@@ -46,7 +40,9 @@ public class Main {
 					ouf.println(result);
 				}
 				break;
-
+			case "delete":
+				BlackRedTree.delete(key);
+				break;
 			}
 		}
 		ouf.close();
@@ -123,11 +119,13 @@ public class Main {
 		private static class Node {
 			private final int data;
 			private Node left, right, parent;
+			boolean life;
 
 			private colors color;
 
 			public Node(int newData, Node newParent) {
 				data = newData;
+				life = true;
 				color = colors.RED;
 				left = null;
 				right = null;
@@ -136,6 +134,7 @@ public class Main {
 
 			private void add(int newData) {
 				if (data == newData) {
+					life = true;
 					return;
 				}
 				if (data > newData) {
@@ -157,7 +156,10 @@ public class Main {
 
 			private boolean contain(int request) {
 				if (data == request) {
-					return true;
+					if (life) {
+						return true;
+					}
+					return false;
 				}
 				if (request < data) {
 					if (left == null) {
@@ -182,15 +184,18 @@ public class Main {
 				if (right != null) {
 					result += right.recSize();
 				}
-				return 1 + result;
+				if (life) {
+					return 1 + result;
+				}
+				return result;
 			}
 
 			private int upperBound(int request, int curmax) {
 				if (data > request) {
 					if (left == null) {
-						return data;
+						return life ? data : curmax;
 					}
-					return left.upperBound(request, data);
+					return left.upperBound(request, life ? data : curmax);
 				} else {
 					if (right == null) {
 						return curmax;
@@ -202,9 +207,9 @@ public class Main {
 			private int lowerBound(int request, int curmin) {
 				if (data < request) {
 					if (right == null) {
-						return data;
+						return life ? data : curmin;
 					}
-					return right.lowerBound(request, data);
+					return right.lowerBound(request, life ? data : curmin);
 				} else {
 					if (left == null) {
 						return curmin;
@@ -215,20 +220,12 @@ public class Main {
 
 			private void overBalance() {
 				if (left != null) {
-					/*
-					 * if(left.parent != this) { System.out.println("FUCK"); }
-					 */
 					left.parent = this;
 					left.overBalance();
-
 				}
 				if (right != null) {
-					/*
-					 * if(right.parent != this) { System.out.println("FUCK"); }
-					 */
 					right.parent = this;
 					right.overBalance();
-
 				}
 			}
 
@@ -314,6 +311,22 @@ public class Main {
 					parent.balance();
 				}
 			}
+
+			private void delete(int key) {
+				if (data == key) {
+					life = false;
+					return;
+				}
+				if (data > key) {
+					if (left != null) {
+						left.delete(key);
+					}
+				} else {
+					if (right != null) {
+						right.delete(key);
+					}
+				}
+			}
 		}
 
 		public static void print() {
@@ -334,6 +347,13 @@ public class Main {
 						+ tree.color);
 				write(prefix + " ", tree.right);
 			}
+		}
+
+		public static void delete(int key) {
+			if (root == null) {
+				return;
+			}
+			root.delete(key);
 		}
 
 		public static void insert(int newData) {
