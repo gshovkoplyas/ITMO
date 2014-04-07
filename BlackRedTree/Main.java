@@ -15,6 +15,9 @@ public class Main {
 			int key = Integer.parseInt(input[1]);
 			switch (request) {
 			case "insert":
+				/*if (key == 50) {
+					System.out.println("dat shit");
+				}*/
 				BlackRedTree.insert(key);
 				break;
 			case "exists":
@@ -44,6 +47,10 @@ public class Main {
 				BlackRedTree.delete(key);
 				break;
 			}
+			/*System.out.println(request + ": " + key);
+			System.out.println("size: " + BlackRedTree.size());
+			BlackRedTree.print();*/
+
 		}
 		ouf.close();
 	}
@@ -117,15 +124,13 @@ public class Main {
 		};
 
 		private static class Node {
-			private final int data;
+			private int data;
 			private Node left, right, parent;
-			boolean life;
 
 			private colors color;
 
 			public Node(int newData, Node newParent) {
 				data = newData;
-				life = true;
 				color = colors.RED;
 				left = null;
 				right = null;
@@ -133,8 +138,11 @@ public class Main {
 			}
 
 			private void add(int newData) {
+				/*
+				 * if (left != null) { left.parent = this; } if (right != null)
+				 * { right.parent = this; }
+				 */
 				if (data == newData) {
-					life = true;
 					return;
 				}
 				if (data > newData) {
@@ -156,10 +164,7 @@ public class Main {
 
 			private boolean contain(int request) {
 				if (data == request) {
-					if (life) {
-						return true;
-					}
-					return false;
+					return true;
 				}
 				if (request < data) {
 					if (left == null) {
@@ -184,18 +189,15 @@ public class Main {
 				if (right != null) {
 					result += right.recSize();
 				}
-				if (life) {
-					return 1 + result;
-				}
-				return result;
+				return 1 + result;
 			}
 
 			private int upperBound(int request, int curmax) {
 				if (data > request) {
 					if (left == null) {
-						return life ? data : curmax;
+						return data;
 					}
-					return left.upperBound(request, life ? data : curmax);
+					return left.upperBound(request, data);
 				} else {
 					if (right == null) {
 						return curmax;
@@ -207,9 +209,9 @@ public class Main {
 			private int lowerBound(int request, int curmin) {
 				if (data < request) {
 					if (right == null) {
-						return life ? data : curmin;
+						return data;
 					}
-					return right.lowerBound(request, life ? data : curmin);
+					return right.lowerBound(request, data);
 				} else {
 					if (left == null) {
 						return curmin;
@@ -218,16 +220,11 @@ public class Main {
 				}
 			}
 
-			private void overBalance() {
-				if (left != null) {
-					left.parent = this;
-					left.overBalance();
-				}
-				if (right != null) {
-					right.parent = this;
-					right.overBalance();
-				}
-			}
+			/*
+			 * private void overBalance() { if (left != null) { left.parent =
+			 * this; left.overBalance(); } if (right != null) { right.parent =
+			 * this; right.overBalance(); } }
+			 */
 
 			private void balance() {
 				if (color == colors.BLACK) {
@@ -269,6 +266,9 @@ public class Main {
 							grandpa.left = this;
 						} else {
 							grandpa.left = parent.right;
+							if (parent.right != null) {
+								parent.right.parent = grandpa;
+							}
 							if (grandpa.parent != null) {
 								if (grandpa.data < grandpa.parent.data) {
 									grandpa.parent.left = parent;
@@ -294,6 +294,9 @@ public class Main {
 							grandpa.right = this;
 						} else {
 							grandpa.right = parent.left;
+							if (parent.left != null) {
+								parent.left.parent = grandpa;
+							}
 							if (grandpa.parent != null) {
 								if (grandpa.data < grandpa.parent.data) {
 									grandpa.parent.left = parent;
@@ -314,7 +317,57 @@ public class Main {
 
 			private void delete(int key) {
 				if (data == key) {
-					life = false;
+					if (left == null && right == null) {
+						if (data > parent.data) {
+							parent.right = null;
+						} else {
+							parent.left = null;
+						}
+						return;
+					}
+					if (left != null) {
+						Node bench = left;
+						while (bench.right != null) {
+							bench = bench.right;
+						}
+						if (bench.data > bench.parent.data) {
+							if (bench.left == null) {
+								bench.parent.right = null;
+							} else {
+								bench.parent.right = bench.left;
+								bench.left.parent = bench.parent;
+							}
+						} else {
+							if (bench.left == null) {
+								bench.parent.left = null;
+							} else {
+								bench.parent.left = bench.left;
+								bench.left.parent = bench.parent;
+							}
+						}
+						data = bench.data;
+					} else {
+						Node bench = right;
+						while (bench.left != null) {
+							bench = bench.left;
+						}
+						if (bench.data > bench.parent.data) {
+							if (bench.right == null) {
+								bench.parent.right = null;
+							} else {
+								bench.parent.right = bench.right;
+								bench.right.parent = bench.parent;
+							}
+						} else {
+							if (bench.right == null) {
+								bench.parent.left = null;
+							} else {
+								bench.parent.left = bench.right;
+								bench.right.parent = bench.parent;
+							}
+						}
+						data = bench.data;
+					}
 					return;
 				}
 				if (data > key) {
@@ -343,8 +396,21 @@ public class Main {
 		private static void write(String prefix, Node tree) {
 			if (tree != null) {
 				write(prefix + " ", tree.left);
-				System.out.println(prefix + "data: " + tree.data + " color: "
-						+ tree.color);
+				System.out
+						.println(prefix
+								+ "data: "
+								+ tree.data
+								+ " color: "
+								+ tree.color
+								+ " parent: "
+								+ ((tree.parent == null) ? "null"
+										: tree.parent.data)
+								+ " parent.left: "
+								+ ((tree.parent != null && tree.parent.left != null) ? tree.parent.left.data
+										: "null")
+								+ " parent.right: "
+								+ ((tree.parent != null && tree.parent.right != null) ? tree.parent.right.data
+										: "null"));
 				write(prefix + " ", tree.right);
 			}
 		}
@@ -353,7 +419,12 @@ public class Main {
 			if (root == null) {
 				return;
 			}
+			if (root.data == key && root.left == null && root.right == null) {
+				root = null;
+				return;
+			}
 			root.delete(key);
+			// root.overBalance();
 		}
 
 		public static void insert(int newData) {
@@ -364,7 +435,7 @@ public class Main {
 				root.add(newData);
 				while (root.parent != null)
 					root = root.parent;
-				root.overBalance();
+				// root.overBalance();
 			}
 		}
 
