@@ -56,6 +56,9 @@ struct node
 				cout << parent->right->data;
 			else
 				cout << "NULL";
+			cout << ", ";
+			cout << "size: ";
+			cout << get_size();
 			cout << endl;
 			right->print(prefix + " ");
 		}
@@ -181,7 +184,9 @@ node *insert(node *root, int new_data)
 	split(root, new_data, left, right);
 	root = new node(new_data);
 	root->left = left;
+	root->left_size = left->get_size();
 	root->right = right;
+	root->right_size = right->get_size();
 	keep_parent(root);
 	return root;
 }
