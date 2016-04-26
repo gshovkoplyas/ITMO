@@ -1,2 +1,2 @@
-Григорий Шовкопляс не умеет писать Красно-черное дерево не смотрите этот код, плез....
+This is Grigory Shovkoplias (a.k.a gshark) studing repository
 ==

@@ -1,0 +1,6 @@
+<root>
+  <item name='java.nio.charset.StandardCharsets UTF_8'>
+    <annotation name='org.jetbrains.annotations.NotNull'/>
+    <annotation name='java.lang.annotation.Deprecated'/>
+  </item>
+</root>
