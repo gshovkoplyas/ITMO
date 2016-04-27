@@ -1,0 +1,106 @@
+\documentclass[11pt,a4paper,oneside]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{olymp}
+\usepackage{graphicx}
+\usepackage{expdlist}
+\usepackage{mfpic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage{epigraph}
+\usepackage{url}
+\usepackage{ulem}
+
+\DeclareMathOperator{\nott}{not}
+
+\begin{document}
+
+\renewcommand{\t}[1]{\mbox{\texttt{#1}}}
+\newcommand{\s}[1]{\mbox{``\t{#1}''}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\plainhat}{{\char 94}}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\w}[1]{``\t{#1}''}
+
+
+\binoppenalty=10000
+\relpenalty=10000
+
+\contest{Правила оформления кода}{ЛКШ 2015 Июль}{B'}
+
+\begin{LARGE} \textbf{Требования к оформлению кода на Питоне} \end{LARGE}
+\newline
+\subsection*{Форматирование}
+\begin{enumerate}
+    \item Используйте два или четыре пробела для отступов. 
+          Недопустимо использовать символ табуляции для отступов. 
+          Отступы внутри одной программы должны быть одинакового размера.
+    \item Пишите \texttt{import} каждого модуля в отдельной строке
+    \item Располагайте все \texttt{import}'ы в верхней части файла перед любыми глобальными объявлениями.
+    \item Функции разделяйте двумя пустыми строками. 
+          Смысловые блоки внутри одной функции разделяйте пустрой строкой.
+    \item Не используйте конструкцию \texttt{from} $\dots$ \texttt{import *}
+    \item Если вы используете константу более одного раза, объявите ее, как таковую.
+    \item Cкобки не отделяются пробелами с внутренней стороны. 
+          Между функцией и ее аргументами пробел не ставится.
+          \\ \texttt{ spam(ham[1], $\{$eggs: 2$\}$) \hbox{ } \hbox{ } \hbox{ } \hbox{ } $\#$ Правильно}
+          \\ \texttt{ spam ( ham [ 1 ], $\{$ eggs: 2 $\}$ ) $\#$ Неправильно}
+    \item Перед запятой, двоеточием пробел не ставится, после --- ставится.
+          \\ \texttt{ if x == 4:}
+          \\ \texttt{ \hbox{ }  print x, y}
+          \\ \texttt{ \hbox{ }  x, y = y, x   $\#$ Правильно}
+          \\
+          \\ \texttt{ if x == 4 :}
+          \\ \texttt{ \hbox{ }  print x , y}
+          \\ \texttt{ \hbox{ }  x,y = y,x   \hbox{ } $\#$ Неправильно}
+    \item Всегда окружайте следующие бинарные операторы ровно одним символом пробела с каждой стороны:
+          \begin{enumerate}
+            \item присваивания \texttt{(=, +=, -= и т. д.)}
+            \item сравнения \texttt{(==, <, >, !=, <>, <=, >=, in, not in, is, is not)}
+            \item логические \texttt{(and, or, not)}
+            \item арифметические \texttt{(+, -, *, /, //, \%, **)}
+          \end{enumerate}              
+    \item Не располагайте несколько инструкций в одной строке. Разнесите их по разным строкам.
+          \\ \texttt{x = 35} 
+          \\ \texttt{func(10) \hbox{ } \hbox{ } \hbox{ } \hbox{ } $\#$ Правильно}
+          \\ \texttt{x = 35; func(10) $\#$ Неправильно}
+    \item Не располагайте блок из нескольких инструкций на той же строке сразу после 
+          двоеточия (после \texttt{if}, \texttt{while} и т. д.).
+    \item Ширина строки не должна превышать 80-100 символов.
+
+\subsection*{Комментарии}
+    
+     \item Комментарии, противоречащие коду, хуже, чем их отсутствие.
+     \item Располагайте однострочные комментарии после кода в той же строке и отделяйте
+           их от кода не менее чем двумя пробелами. Комментарии должны начинаться с $\#$ и
+           одного пробела.
+
+\subsection*{Имена}
+
+     \item Не используйте символы <<l>>, <<O>>, и <<I>> как имена переменных. 
+           В некоторых шрифтах они могут быть очень похожи на цифры.
+     \item Название переменной должно содержать информацию о ее назначении, 
+            не допускается использование названий из одной буквы, за исключением счетчиков в циклах
+            \texttt{(i, j, k)} и переменных, хранящих размер входных данных \texttt{(n, m)}.
+     \item Давайте переменным говорящие английские имена, не используйте транслит.
+           \\ \texttt{num\_letters = int(input()) $\#$ Правильно}
+           \\ \texttt{kolvo\_bukv = int(input()) \quad $\#$ Неправильно}
+     \item Имена переменных и функций должны содержать только маленькие буквы. Слова
+           разделяются символами подчёркивания. Примеры:
+           \texttt{name}, \texttt{name\_with\_several\_words\_in\_it}
+           Допускается также записывать начальные буквы каждого слова с заглавной буквы,
+           при этом символы подчёркивания не ставятся: \texttt{wordLength}  
+     \item Имена констант должны содержать только заглавные буквы. Слова разделяются
+           символами подчёркивания. Примеры: \texttt{NAME}, \texttt{NAME\_WITH\_SEVERAL\_WORDS\_IN\_IT}
+
+
+\end{enumerate}
+
+
+\end{document}
