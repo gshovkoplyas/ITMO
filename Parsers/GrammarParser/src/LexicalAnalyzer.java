@@ -73,33 +73,40 @@ public class LexicalAnalyzer {
                 curToken = Token.END;
                 break;
             default:
-                if (curChar == 'v') {
+                if (curChar == 'v' || curChar == 'V') {
+                    boolean isVar = false;
+                    tokenQueue.add(new Pair<Token, Integer>(Token.CHARACTER, curChar));
                     nextChar();
-                    tokenQueue.add(new Pair(Token.CHARACTER, 'v'));
-                    if (curChar == 'a') {
+                    if (curChar == 'a' || curChar == 'A') {
+                        tokenQueue.add(new Pair<Token, Integer>(Token.CHARACTER, curChar));
                         nextChar();
-                        tokenQueue.add(new Pair(Token.CHARACTER, 'a'));
-                        if (curChar == 'r') {
+                        if (curChar == 'r' || curChar == 'R') {
+                            tokenQueue.add(new Pair<Token, Integer>(Token.CHARACTER, curChar));
                             nextChar();
-                            tokenQueue.add(new Pair(Token.CHARACTER, 'r'));
                             if (isBlank(curChar)) {
                                 curToken = Token.VAR;
-                                for (int i = 0; i < 3; i++) {
+                                for (int i = 0; i < 2; i++) {
                                     tokenQueue.removeLast();
                                 }
+                                isVar = true;
                             }
                         }
+                    }
+                    if (!isVar) {
+                        Pair<Token, Integer> cur = tokenQueue.poll();
+                        curToken = cur.getKey();
+                        curToken.setValue(cur.getValue());
                     }
                 } else if (isAlpha(curChar)) {
                     curToken = Token.CHARACTER;
                     curToken.setValue(curChar);
                     nextChar();
-                    break;
+                    //break;
                 } else if (isDigit(curChar)) {
                     curToken = Token.DIGIT;
                     curToken.setValue(curChar);
                     nextChar();
-                    break;
+                    //break;
                 } else {
                     throw new ParseException("Illegal character" + (char) curChar, curPos);
                 }

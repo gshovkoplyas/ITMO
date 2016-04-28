@@ -18,7 +18,7 @@ public class Parser {
                 Tree cont = T();
                 return new Tree("S", beg, cont);
             default:
-                throw new AssertionError();
+                throw new ParseException("VAR expected at position", lexicalAnalyzer.curPos());
         }
     }
 
@@ -33,14 +33,16 @@ public class Parser {
         switch (lexicalAnalyzer.curToken()) {
             case CHARACTER:
             case DIGIT:
-                String value = String.valueOf((char) lexicalAnalyzer.curToken().getValue());
-                lexicalAnalyzer.nextToken();
-                Tree cont = NDoublePrime();
-                return new Tree("N''", new Tree(value), cont);
+                //String value = String.valueOf((char) lexicalAnalyzer.curToken().getValue());
+                //lexicalAnalyzer.nextToken();
+                Tree cont = NPrime();
+                return new Tree("N''", cont);
             case SEMICOLON:
             case COLON:
             case COMMA:
                 return new Tree("N''");
+            case END:
+                throw new ParseException("Unexpected end of string", lexicalAnalyzer.curPos());
             default:
                 throw new AssertionError();
         }
@@ -67,7 +69,7 @@ public class Parser {
                 Tree cont = NDoublePrime();
                 return new Tree("N", new Tree(value), cont);
             default:
-                throw new AssertionError();
+                throw new ParseException("Character expected at position", lexicalAnalyzer.curPos());
         }
     }
 
@@ -88,7 +90,7 @@ public class Parser {
                         throw new ParseException("':' or ',' expected at position", lexicalAnalyzer.curPos());
                 }
             default:
-                throw new AssertionError();
+                throw new ParseException("Character expected at position", lexicalAnalyzer.curPos());
         }
     }
 
@@ -114,16 +116,13 @@ public class Parser {
                 Tree cont = T();
                 return new Tree("T", beg, new Tree(":"), sub, new Tree(";"), cont);
             default:
-                throw new AssertionError();
+                throw new ParseException("Character expected at position", lexicalAnalyzer.curPos());
         }
     }
+
     public Tree parse(InputStream inputStream) throws ParseException {
         lexicalAnalyzer = new LexicalAnalyzer(inputStream);
         lexicalAnalyzer.nextToken();
-        /*while (lexicalAnalyzer.curToken() != Token.END) {
-            lexicalAnalyzer.curToken().print(System.out);
-            lexicalAnalyzer.nextToken();
-        }*/
         return S();
     }
 
