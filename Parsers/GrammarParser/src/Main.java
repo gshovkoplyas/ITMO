@@ -26,9 +26,10 @@ public class Main {
             // test("var a: integer; b: c12har21;");
             //OutputStream outputStream = System.out;
             try {
-                Tree t = (new Parser()).parse(inputStream);
+                //lexicalAnalyzerPrint(inputStream);
+                Tree t = (new NewParser()).parse(inputStream);
                 t.print(new PrintStream("output.txt"));
-                DSutils.show(t, 25, 15);
+                DSutils.show(t, 7 * t.maxNodeLen(), 15);
                 log.println("Succesful");
             } catch (ParseException e) {
                 //e.printStackTrace();
@@ -43,7 +44,7 @@ public class Main {
     }
 
     private void lexicalAnalyzerPrint(InputStream inputStream) throws ParseException {
-        LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer(inputStream);
+        NewLexicalAnalyzer lexicalAnalyzer = new NewLexicalAnalyzer(inputStream);
         lexicalAnalyzer.nextToken();
         while (lexicalAnalyzer.curToken() != Token.END) {
             lexicalAnalyzer.curToken().print(System.out);

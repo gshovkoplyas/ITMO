@@ -36,6 +36,17 @@ public class Tree implements DSTreeNode{
         }
     }
 
+    public int maxNodeLen() {
+        int res = node.length();
+        if (children == null) {
+            return res;
+        }
+        for (Tree child: children) {
+            res = Math.max(child.maxNodeLen(), res);
+        }
+        return res;
+    }
+
     @Override
     public DSTreeNode[] DSgetChildren() {
         if (children == null) {

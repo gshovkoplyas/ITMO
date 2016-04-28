@@ -13,13 +13,13 @@ public class LexicalAnalyzer {
     private InputStream in;
     private int curChar;
     private int curPos;
-    private Deque<Pair<Token, Integer>> tokenQueue;
+    private Deque<Pair<Token, String>> tokenQueue;
     private Token curToken;
 
     public LexicalAnalyzer(InputStream in) throws ParseException {
         this.in = in;
         curPos = 0;
-        tokenQueue = new ArrayDeque<Pair<Token, Integer>>();
+        tokenQueue = new ArrayDeque<Pair<Token, String>>();
         nextChar();
     }
 
@@ -46,7 +46,7 @@ public class LexicalAnalyzer {
 
     public void nextToken() throws ParseException {
         if (!tokenQueue.isEmpty()) {
-            Pair<Token, Integer> cur = tokenQueue.poll();
+            Pair<Token, String> cur = tokenQueue.poll();
             curToken = cur.getKey();
             curToken.setValue(cur.getValue());
             return;
@@ -75,13 +75,13 @@ public class LexicalAnalyzer {
             default:
                 if (curChar == 'v' || curChar == 'V') {
                     boolean isVar = false;
-                    tokenQueue.add(new Pair<Token, Integer>(Token.CHARACTER, curChar));
+                    tokenQueue.add(new Pair<Token, String>(Token.CHARACTER, String.valueOf((char)curChar)));
                     nextChar();
                     if (curChar == 'a' || curChar == 'A') {
-                        tokenQueue.add(new Pair<Token, Integer>(Token.CHARACTER, curChar));
+                        tokenQueue.add(new Pair<Token, String>(Token.CHARACTER, String.valueOf((char)curChar)));
                         nextChar();
                         if (curChar == 'r' || curChar == 'R') {
-                            tokenQueue.add(new Pair<Token, Integer>(Token.CHARACTER, curChar));
+                            tokenQueue.add(new Pair<Token, String>(Token.CHARACTER, String.valueOf((char)curChar)));
                             nextChar();
                             if (isBlank(curChar)) {
                                 curToken = Token.VAR;
@@ -93,18 +93,18 @@ public class LexicalAnalyzer {
                         }
                     }
                     if (!isVar) {
-                        Pair<Token, Integer> cur = tokenQueue.poll();
+                        Pair<Token, String> cur = tokenQueue.poll();
                         curToken = cur.getKey();
                         curToken.setValue(cur.getValue());
                     }
                 } else if (isAlpha(curChar)) {
                     curToken = Token.CHARACTER;
-                    curToken.setValue(curChar);
+                    curToken.setValue(String.valueOf((char)curChar));
                     nextChar();
                     //break;
                 } else if (isDigit(curChar)) {
                     curToken = Token.DIGIT;
-                    curToken.setValue(curChar);
+                    curToken.setValue(String.valueOf((char)curChar));
                     nextChar();
                     //break;
                 } else {

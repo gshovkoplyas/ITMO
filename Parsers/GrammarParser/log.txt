@@ -1,38 +1,40 @@
-1: "var va: vars;"
+1: "var a, b: integer; c: char;"
 Succesful
-2: "VaR VeRy: sTrAnGe;"
+2: "var va: vars;"
 Succesful
-3: "var a, b: integer; c: char;"
+3: "VaR VeRy: sTrAnGe;"
 Succesful
-4: "var a1A2: Int64;"
+4: "var a, b: integer; c: char;"
 Succesful
-5: "abacaba"
-Exception: VAR expected at position 1
-6: "var a,integer;"
-Exception: ':' or ',' expected at position 14
-7: "var 1: integer;"
+5: "var a1A2: Int64;"
 Succesful
-8: "var b"
+6: "abacaba"
+Exception: VAR expected at position 7
+7: "var a,integer;"
+Exception: ':' expected at position 14
+8: "var 1: integer;"
+Exception: Character expected at position 4
+9: "var b"
 Exception: Unexpected end of string 5
-9: ""
+10: ""
 Exception: VAR expected at position 0
-10: "var b;"
-Exception: ':' or ',' expected at position 6
-11: "var a,,b:int;"
-Exception: Character expected at position 7
-12: "var a, b: integer"
-Exception: Unexpected end of string 17
-13: "var a:b:c:d;"
+11: "var b;"
+Exception: ':' expected at position 6
+12: "var a,,b:int;"
+Exception: variable expected at position 7
+13: "var a, b: integer"
+Exception: ';' expected at position 17
+14: "var a:b:c:d;"
 Exception: ';' expected at position 8
-14: "var a, b: integer, vars: char;"
+15: "var a, b: integer, vars: char;"
 Exception: ';' expected at position 18
-15: "var a, b: integer: vars: char;"
+16: "var a, b: integer: vars: char;"
 Exception: ';' expected at position 18
-16: "Var leTTQrrC9, XItyyV, h1UC29Goa, dR7gS23, FlRa5, tUUXFv, QS0i: Uyob177xER; VVuM, vX854xc8HQ, NuZ, Ih, k1b89I, p5j, Phn995c: X40pIu; sHlME, lm5J3SVG, Q2ze, c7, T42B98, tHm: R; xZ8L, p5J9aqrH2, otS, w1d3ar, hq8X, cU4KrW1q8A, z: Q7A; OFlbb3, uqB11rwoI, C37rEW, c, DPUFc4al, tNt63m9: Qa; Z31x, tfQI, GWM2hlL, WeepF54, w8, F302V, fF, Rf70gM4: i4C0y69;"
+17: "Var leTTQrrC9, XItyyV, h1UC29Goa, dR7gS23, FlRa5, tUUXFv, QS0i: Uyob177xER; VVuM, vX854xc8HQ, NuZ, Ih, k1b89I, p5j, Phn995c: X40pIu; sHlME, lm5J3SVG, Q2ze, c7, T42B98, tHm: R; xZ8L, p5J9aqrH2, otS, w1d3ar, hq8X, cU4KrW1q8A, z: Q7A; OFlbb3, uqB11rwoI, C37rEW, c, DPUFc4al, tNt63m9: Qa; Z31x, tfQI, GWM2hlL, WeepF54, w8, F302V, fF, Rf70gM4: i4C0y69;"
 Succesful
-17: "Var UeY5F, Ic, sg, b56, W9, V3kp84, P1Y, F: tcS4Qei; nK61SeZYx3, lys652, Z, cjv5BYPE, P, Lv91aYH0, Q4, Jo14UwmN, K3J5: C078A; S, nU95Zzm8q, o18NoU9R1, ieow25, vm81, GB, WRe9h6: a3ZltK; Z9WQJ3WXR, Dg524b1, Ths56Gg, k9, xO, bp45e, c8Zh, U4e, Q7n, ZAU: Q5e7; lh, fK4Z30, D, F, k, T42CZE, SrAY2a: MRCZJpInE; QO, mNpsa31, xET, lr0Km7Wq, OAMw, d6yJ, A7, Oh24uR3n58: d1b; nlZp0gLeD, Orr8, BZ, Pwj, lR8DG90, Qr6L: hpNwma95N;"
+18: "Var UeY5F, Ic, sg, b56, W9, V3kp84, P1Y, F: tcS4Qei; nK61SeZYx3, lys652, Z, cjv5BYPE, P, Lv91aYH0, Q4, Jo14UwmN, K3J5: C078A; S, nU95Zzm8q, o18NoU9R1, ieow25, vm81, GB, WRe9h6: a3ZltK; Z9WQJ3WXR, Dg524b1, Ths56Gg, k9, xO, bp45e, c8Zh, U4e, Q7n, ZAU: Q5e7; lh, fK4Z30, D, F, k, T42CZE, SrAY2a: MRCZJpInE; QO, mNpsa31, xET, lr0Km7Wq, OAMw, d6yJ, A7, Oh24uR3n58: d1b; nlZp0gLeD, Orr8, BZ, Pwj, lR8DG90, Qr6L: hpNwma95N;"
 Succesful
-18: "Var TTKu115qp, Xe8Sx7, hx, HSM9H8frO, sGKufl2, M24675Ve, zj79, M2Z5pyg, SCKDtioBA, P1DsSdH0K: XYGz7; h8, pJL7kz, XqFPQ, ci5O5W, M71Gd5D3, gQVVD48D, v: sc4ye2G7x; BI11m86, R39l, W2p, ifJ, hMufKhZ, wDH07, xw4, M, b, FGrl: FYG9M16J; P7, Hc, NOxmGN1L1M, z57e, GODgi, Ahr, EC9gY1O4lc: l; F, bL, t5HcD6n272, vxDHd7t0ts, q0L74, O1Ag, xm: I94gXDq; GBhH, bsnu1, N05U41x, nZ2O3TZ9L7, uC13, Tl268ZK, uW97, Y7WZ6, lU21gh63mE, li6t: Fb3; q, EN992Aef9c, jzAVbhkJb4, rk3, dZG, kayErbZaYW, EYq3uRa9c3: N; K4, SOB3, iuf96, NqsmU835g3, im6yCR08, X81Y8yC9, E1Q1p93Q, h3fQy6Q0O: HzLzvhi2; l7O2Z84Va, J31tyzKtl9, owmwY9k6se, jY, ev08C, l2742, C100fDVC: YvqWUe2G;"
+19: "Var TTKu115qp, Xe8Sx7, hx, HSM9H8frO, sGKufl2, M24675Ve, zj79, M2Z5pyg, SCKDtioBA, P1DsSdH0K: XYGz7; h8, pJL7kz, XqFPQ, ci5O5W, M71Gd5D3, gQVVD48D, v: sc4ye2G7x; BI11m86, R39l, W2p, ifJ, hMufKhZ, wDH07, xw4, M, b, FGrl: FYG9M16J; P7, Hc, NOxmGN1L1M, z57e, GODgi, Ahr, EC9gY1O4lc: l; F, bL, t5HcD6n272, vxDHd7t0ts, q0L74, O1Ag, xm: I94gXDq; GBhH, bsnu1, N05U41x, nZ2O3TZ9L7, uC13, Tl268ZK, uW97, Y7WZ6, lU21gh63mE, li6t: Fb3; q, EN992Aef9c, jzAVbhkJb4, rk3, dZG, kayErbZaYW, EYq3uRa9c3: N; K4, SOB3, iuf96, NqsmU835g3, im6yCR08, X81Y8yC9, E1Q1p93Q, h3fQy6Q0O: HzLzvhi2; l7O2Z84Va, J31tyzKtl9, owmwY9k6se, jY, ev08C, l2742, C100fDVC: YvqWUe2G;"
 Succesful
-19: "var a, b: integer; c: char;"
+20: "var a, b: integer; c: char;"
 Succesful

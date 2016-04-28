@@ -1,3 +1,4 @@
+var a, b: integer; c: char;
 var va: vars;
 VaR VeRy: sTrAnGe;
 var a, b: integer; c: char;

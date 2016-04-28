@@ -52,7 +52,7 @@ public class Parser {
         switch (lexicalAnalyzer.curToken()) {
             case CHARACTER:
             case DIGIT:
-                String value = String.valueOf((char) lexicalAnalyzer.curToken().getValue());
+                String value = lexicalAnalyzer.curToken().getValue();
                 lexicalAnalyzer.nextToken();
                 Tree cont = NDoublePrime();
                 return new Tree("N'", new Tree(value), cont);
@@ -64,7 +64,7 @@ public class Parser {
     private Tree N() throws ParseException {
         switch (lexicalAnalyzer.curToken()) {
             case CHARACTER:
-                String value = String.valueOf((char) lexicalAnalyzer.curToken().getValue());
+                String value = lexicalAnalyzer.curToken().getValue();
                 lexicalAnalyzer.nextToken();
                 Tree cont = NDoublePrime();
                 return new Tree("N", new Tree(value), cont);

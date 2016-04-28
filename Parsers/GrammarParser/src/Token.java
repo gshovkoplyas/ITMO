@@ -7,16 +7,16 @@ import java.io.PrintStream;
  * Created by shovkoplyas on 18.04.2016.
  */
 public enum Token {
-    VAR, CHARACTER, DIGIT, COMMA, SEMICOLON, COLON, END;
+    VAR, CHARACTER, DIGIT, COMMA, SEMICOLON, COLON, END, VARTYPE;
     //var, [a-z|A-Z], [0-9], ',', ';', ':'
 
-    private int value;
+    private String value;
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
@@ -26,10 +26,9 @@ public enum Token {
                 out.println("VAR");
                 break;
             case CHARACTER:
-                out.println(String.valueOf((char)getValue()));
-                break;
             case DIGIT:
-                out.println(String.valueOf((char)getValue()));
+            case VARTYPE:
+                out.println(getValue());
                 break;
             case COMMA:
                 out.println(",");
