@@ -66,3 +66,7 @@ fabric.properties
 #Latex
 *.log
 *.aux
+
+#Word
+~*
+~*
