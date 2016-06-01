@@ -1,8 +1,6 @@
-1: "var a, b: integer; c: char;"
-Succesful
+1: "var a, b: integeException: alpException: ':' expected at position 6
 2: "var va: vars;"
-Succesful
-3: "VaR VeRy: sTrAnGe;"
+AnGe;"
 Succesful
 4: "var a, b: integer; c: char;"
 Succesful
