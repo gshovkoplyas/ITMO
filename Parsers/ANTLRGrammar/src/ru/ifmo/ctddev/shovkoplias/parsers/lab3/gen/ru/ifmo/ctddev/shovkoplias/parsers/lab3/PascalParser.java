@@ -236,7 +236,7 @@ public class PascalParser extends Parser {
 			        for (String s : ((EvalContext)_localctx).block.functions) {
 			            _localctx.code += addNewline(s);
 			        }
-			        _localctx.code += addNewline(((EvalContext)_localctx).block.mainFunctionCode + ".");
+			        _localctx.code += addNewline(((EvalContext)_localctx).block.mainFunctionCode + "");
 			        VariableChanger.clean();
 			    
 			}
@@ -746,7 +746,10 @@ public class PascalParser extends Parser {
 			match(EQUAL);
 			setState(247);
 			((ConstantDefinitionContext)_localctx).constant = constant();
-			((ConstantDefinitionContext)_localctx).code =  (((ConstantDefinitionContext)_localctx).identifier!=null?_input.getText(((ConstantDefinitionContext)_localctx).identifier.start,((ConstantDefinitionContext)_localctx).identifier.stop):null) + " = " + ((ConstantDefinitionContext)_localctx).constant.code + ";";
+
+			        VariableChanger.add((((ConstantDefinitionContext)_localctx).identifier!=null?_input.getText(((ConstantDefinitionContext)_localctx).identifier.start,((ConstantDefinitionContext)_localctx).identifier.stop):null));
+			        ((ConstantDefinitionContext)_localctx).code =  VariableChanger.change((((ConstantDefinitionContext)_localctx).identifier!=null?_input.getText(((ConstantDefinitionContext)_localctx).identifier.start,((ConstantDefinitionContext)_localctx).identifier.stop):null)) + " = " + ((ConstantDefinitionContext)_localctx).constant.code + ";";
+			   
 			}
 		}
 		catch (RecognitionException re) {

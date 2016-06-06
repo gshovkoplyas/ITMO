@@ -1,0 +1,19 @@
+@header {
+package ru.ifmo.ctddev.shovkoplias.parsers.lab4;
+}
+
+@members {
+
+}
+
+math -> Integer : operation { return operation.get(0); } ;
+operation-> Integer : NUMBER NUMBER binary({Integer.parseInt(NUMBER.get(0))}, {Integer.parseInt(NUMBER.get(1))}) { return binary.get(0); };
+binary(Integer a, Integer b) -> Integer : plus({a}, {b}) { return plus.get(0); } | mul({a}, {b}) { return mul.get(0); } | pow({a}, {b}) { return pow.get(0); } ;
+plus(Integer a, Integer b) -> Integer : PLUS { return a + b; } ;
+mul(Integer a, Integer b) -> Integer :  MUL { return a * b; } ;
+pow(Integer a, Integer b) -> Integer :  POW { return (int)Math.pow((double)a, (double)b); } ;
+
+NUMBER : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+PLUS : '+';
+MUL : '*';
+POW : '^';
