@@ -51,6 +51,14 @@ test = Node 3 (Node 1 Leaf Leaf) $ Node 123 (Node 4 Leaf Leaf) Leaf
 
 see t = putStr $ verticalPrint t
 
+
+{--
+    if (tree == NULL)
+        return curmax;
+    if (tree->data > request)
+        return next(tree->left, request, tree->data);
+    return next(tree->right, request, curmax);
+--}
 next :: (Ord a) => Tree a -> a -> Maybe a 
 next t x = next1 t x Nothing
 

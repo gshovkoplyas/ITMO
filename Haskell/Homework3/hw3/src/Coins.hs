@@ -39,7 +39,7 @@ red  = undefined :: Red
 
 coinCMP :: (Color a, Color b) => Coin a -> Coin b -> Ordering
 coinCMP x y 
-    | (value (getColor x) == value (getColor y)) = EQ
+    | (value (getColor x) == value (getColor y)) = compare (getCoin x) (getCoin y)
     | (value (getColor x) <  value (getColor y)) = LT
     | (value (getColor x) >  value (getColor y)) = GT
 
@@ -47,7 +47,7 @@ coinCMP x y
 createCoins :: color -> Integer -> Coin color
 createCoins _ = Coin 
 
-cb1 = createCoins blue 10
+cb1 = createCoins blue 9
 cb2 = createCoins blue 10
 cr1 = Coin 5 :: Coin Red
 

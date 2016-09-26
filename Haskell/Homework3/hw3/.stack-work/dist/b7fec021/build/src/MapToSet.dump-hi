@@ -1,0 +1,742 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-26 09:50:04.2190315 UTC
+
+interface hw3-0.1.0.0-AXaGW1BIMzGD78qTtHJ6tU:MapToSet 8001
+  interface hash: 4c78710889d4b7f2e1b15a1d980bf1d7
+  ABI hash: 688c1ae3f40a45dfc49493c144a8bc07
+  export-list hash: 80fcea36ad32dcb1ffb7ae28d5733029
+  orphan hash: b8b92023028f6d548c94cd231e7ff84c
+  flag hash: f32ecad0526fd86a2189caad4fa2e26f
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  MapToSet.testt
+  MapToSet.testt0
+  MapToSet.testt1
+  MapToSet.testt2
+  MapToSet.Map{MapToSet.mdelete MapToSet.memptyMap MapToSet.mfind MapToSet.mfromList MapToSet.minsert MapToSet.mnext MapToSet.mtoList}
+  MapToSet.Set{MapToSet.sdelete MapToSet.semptySet MapToSet.sfind MapToSet.sfromList MapToSet.sinsert MapToSet.snext MapToSet.stoList}
+module dependencies: BST MonoidFoldableTree TreePrinters
+package dependencies: base-4.9.0.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         hw3-0.1.0.0-AXaGW1BIMzGD78qTtHJ6tU:MonoidFoldableTree
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Data.Foldable 3cbed01c922be29649c33015287c82ca
+import  -/  base-4.9.0.0:Data.Tuple 84c2bcc75b7a239341ae2f88cce9d8d7
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.List 47d436dfb7454bb1883fb4d943e3f389
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  BST 4bf265fdde92de9b7d4148803cf23fb7
+  exports: 5e0f4ec35636350fe206142f99863921
+  delete 13876aab2b4eb98d34e43cdaa88b4e02
+  next 58af0e0d672a0f5c650df0e660165f73
+import  -/  MonoidFoldableTree 1b960c023214625b41673279700a150e
+  exports: 797e30510cf51fb2464166ab8fcfbc77
+import  -/  TreePrinters 7c88ec78d16b768a762b0e73a0a4a7fa
+  exports: 1bf1e04e6a8f6bccd854a07582768b28
+  Leaf 7e2b15e2e1c5c7cc338cec340a2f6b11
+  Node dd2566330da4e24ce348a749e360cbc4
+  Tree b37107482b72b58ae41406d2890ee7a9
+c89267563d7d1a7feeaf1ef81394383b
+  $fMapTreekv ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    MapToSet.Map TreePrinters.Tree k v
+  DFunId
+  {- Arity: 2,
+     Strictness: <L,U(U(U,U),C(C1(U)),A,A,A,A,A,A)><L,U(U(U,U),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ k
+                      @ v
+                      ($dOrd :: GHC.Classes.Ord k)
+                      ($dOrd1 :: GHC.Classes.Ord v).
+                  @ TreePrinters.Tree
+                  @ k
+                  @ v
+                  (MapToSet.$fMapTreekv_$cp1Map @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cp2Map @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cmemptyMap @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cmtoList @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cmfind @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cminsert @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cmdelete @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cmnext @ k @ v $dOrd $dOrd1)
+                  (MapToSet.$fMapTreekv_$cmfromList @ k @ v $dOrd $dOrd1) -}
+2d14da14257b8de73f5ff9f05048b096
+  $fMapTreekv2 :: (k, v) -> [(k, v)] -> [(k, v)]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ k @ v (x :: (k, v)) (ds :: [(k, v)])[OneShot] ->
+                 GHC.Base.augment
+                   @ (k, v)
+                   (\ @ b (c :: (k, v) -> b -> b)[OneShot] (n :: b)[OneShot] ->
+                    GHC.Base.foldr @ (k, v) @ b c n ds)
+                   (GHC.Types.: @ (k, v) x (GHC.Types.[] @ (k, v)))) -}
+ffcefdae59c7a4b6d4b72e59ecebe085
+  $fMapTreekv_$cmdelete ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    TreePrinters.Tree (k, v) -> (k, v) -> TreePrinters.Tree (k, v)
+  {- Arity: 2,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),A,A,A,A,A,A)><L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>,
+     Unfolding: (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v) ->
+                 let {
+                   $dOrd2 :: GHC.Classes.Ord (k, v)
+                   = GHC.Classes.$fOrd(,) @ k @ v $dOrd $dOrd1
+                 } in
+                 \ (t :: TreePrinters.Tree (k, v)) (ds :: (k, v)) ->
+                 case ds of wild { (,) x y ->
+                 BST.delete @ (k, v) $dOrd2 t wild }) -}
+fcacd3364355447b1e45c3dec83af5ca
+  $fMapTreekv_$cmemptyMap ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) => TreePrinters.Tree (k, v)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v) ->
+                 TreePrinters.Leaf @ (k, v)) -}
+34cf0f69d43637a756f36218170a1f0e
+  $fMapTreekv_$cmfind ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    TreePrinters.Tree (k, v) -> (k, v) -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,1*U(1*U,A,A,A,A,A,A,A)><L,1*U(1*U,A,A,A,A,A,A,A)><S,1*U><S,1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ k
+                   @ v
+                   (w :: GHC.Classes.Ord k)
+                   (w1 :: GHC.Classes.Ord v)
+                   (w2 :: TreePrinters.Tree (k, v))
+                   (w3 :: (k, v)) ->
+                 case w3 of ww { (,) ww1 ww2 ->
+                 MapToSet.$w$cmfind @ k @ v w w1 w2 ww1 ww2 }) -}
+e0cd952ca5812d6df597ae203d7de679
+  $fMapTreekv_$cmfromList ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    [(k, v)] -> TreePrinters.Tree (k, v)
+  {- Arity: 2,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),A,A,A,A,A,A)><L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>,
+     Unfolding: (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v) ->
+                 let {
+                   $dOrd2 :: GHC.Classes.Ord (k, v)
+                   = GHC.Classes.$fOrd(,) @ k @ v $dOrd $dOrd1
+                 } in
+                 letrec {
+                   go :: [(k, v)] -> TreePrinters.Tree (k, v)
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: [(k, v)]) ->
+                     case ds of wild {
+                       [] -> TreePrinters.Leaf @ (k, v)
+                       : y ys
+                       -> MonoidFoldableTree.$fMonoidTree_$cmappend
+                            @ (k, v)
+                            $dOrd2
+                            (TreePrinters.Node
+                               @ (k, v)
+                               y
+                               (TreePrinters.Leaf @ (k, v))
+                               (TreePrinters.Leaf @ (k, v)))
+                            (go ys) }
+                 } in
+                 \ (l :: [(k, v)]) -> go l) -}
+b1af7f1fa45e85dbdf4fdb2bcc75cae4
+  $fMapTreekv_$cminsert ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    TreePrinters.Tree (k, v) -> (k, v) -> TreePrinters.Tree (k, v)
+  {- Arity: 2,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),A,A,A,A,A,A)><L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>,
+     Unfolding: (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v) ->
+                 let {
+                   $dOrd2 :: GHC.Classes.Ord (k, v)
+                   = GHC.Classes.$fOrd(,) @ k @ v $dOrd $dOrd1
+                 } in
+                 \ (t :: TreePrinters.Tree (k, v)) (ds :: (k, v)) ->
+                 case ds of wild { (,) x y ->
+                 MonoidFoldableTree.$fMonoidTree_$cmappend
+                   @ (k, v)
+                   $dOrd2
+                   t
+                   (TreePrinters.Node
+                      @ (k, v)
+                      wild
+                      (TreePrinters.Leaf @ (k, v))
+                      (TreePrinters.Leaf @ (k, v))) }) -}
+2d9777ec0a04e8c6e28a9d68e3f6479f
+  $fMapTreekv_$cmnext ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    TreePrinters.Tree (k, v) -> (k, v) -> GHC.Base.Maybe (k, v)
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),A,A,A,A,A,A)><L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>,
+     Unfolding: (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v) ->
+                 let {
+                   $dOrd2 :: GHC.Classes.Ord (k, v)
+                   = GHC.Classes.$fOrd(,) @ k @ v $dOrd $dOrd1
+                 } in
+                 \ (t :: TreePrinters.Tree (k, v)) (ds :: (k, v)) ->
+                 case ds of wild { (,) x y ->
+                 BST.next1 @ (k, v) $dOrd2 t wild (GHC.Base.Nothing @ (k, v)) }) -}
+cb043e6e659fea788f031f53af9382ad
+  $fMapTreekv_$cmtoList ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    TreePrinters.Tree (k, v) -> [(k, v)]
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,A><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v)
+                   (t :: TreePrinters.Tree (k, v)) ->
+                 GHC.List.reverse1
+                   @ (k, v)
+                   (MonoidFoldableTree.$fFoldableTree_$cfoldr
+                      @ (k, v)
+                      @ [(k, v)]
+                      (MapToSet.$fMapTreekv2 @ k @ v)
+                      (GHC.Types.[] @ (k, v))
+                      t)
+                   (GHC.Types.[] @ (k, v))) -}
+2625f81a74d135d41d0d86f424d5b9f2
+  $fMapTreekv_$cp1Map ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    GHC.Base.Monoid (TreePrinters.Tree (k, v))
+  {- Arity: 2,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),A,A,A,A,A,A)><L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v) ->
+                 MonoidFoldableTree.$fMonoidTree
+                   @ (k, v)
+                   (GHC.Classes.$fOrd(,) @ k @ v $dOrd $dOrd1)) -}
+45c1f583bb8a3b940a47f5c17a63278c
+  $fMapTreekv_$cp2Map ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    Data.Foldable.Foldable TreePrinters.Tree
+  {- Arity: 2, Strictness: <L,A><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ k
+                   @ v
+                   ($dOrd :: GHC.Classes.Ord k)
+                   ($dOrd1 :: GHC.Classes.Ord v) ->
+                 MonoidFoldableTree.$fFoldableTree) -}
+58bb47ad66972c4697bb4d31757c19b0
+  $fMapTreekv_$dEq :: GHC.Classes.Eq GHC.Types.Int
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) GHC.Classes.$fEqInt -}
+445060b66a851051645f62db83152998
+  $fMapTreekv_$s$fEq(,) ::
+    GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, GHC.Types.Int)
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     MapToSet.$fMapTreekv_$dEq
+                     MapToSet.$fMapTreekv_$dEq)
+                  (GHC.Classes.$fEq(,)_$c/=
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     MapToSet.$fMapTreekv_$dEq
+                     MapToSet.$fMapTreekv_$dEq) -}
+f4246b0af0e320d3753d389878dd77d0
+  $fMapTreekv_$s$fOrd(,) ::
+    GHC.Classes.Ord (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, GHC.Types.Int)
+                  MapToSet.$fMapTreekv_$s$fOrd(,)_$cp1Ord
+                  (GHC.Classes.$fOrd(,)_$ccompare
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c<
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c<=
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c>
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$c>=
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$cmax
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt)
+                  (GHC.Classes.$fOrd(,)_$cmin
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fOrdInt
+                     GHC.Classes.$fOrdInt) -}
+7152a22a4d930310d736ad66311d763c
+  $fMapTreekv_$s$fOrd(,)_$cp1Ord ::
+    GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                MapToSet.$fMapTreekv_$s$fEq(,) -}
+bcdbbf8759e4bed3a6eeea47a2e1728b
+  $fSetTreea :: GHC.Classes.Ord a => MapToSet.Set TreePrinters.Tree a
+  DFunId
+  {- Arity: 1,
+     Strictness: <L,U(U(U,U),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a ($dOrd :: GHC.Classes.Ord a).
+                  @ TreePrinters.Tree
+                  @ a
+                  (MonoidFoldableTree.$fMonoidTree @ a $dOrd)
+                  (MapToSet.$fSetTreea_$cp2Set @ a $dOrd)
+                  (MapToSet.$fSetTreea_$cp3Set @ a $dOrd)
+                  (MapToSet.$fSetTreea_$csemptySet @ a $dOrd)
+                  (MapToSet.$fSetTreea_$cstoList @ a $dOrd)
+                  (MapToSet.$fSetTreea_$csfind @ a $dOrd)
+                  (MapToSet.$fSetTreea_$csinsert @ a $dOrd)
+                  (MapToSet.$fSetTreea_$csdelete @ a $dOrd)
+                  (MapToSet.$fSetTreea_$csnext @ a $dOrd)
+                  (MapToSet.$fSetTreea_$csfromList @ a $dOrd) -}
+9de856a81e866b2397afffe0d967c0b0
+  $fSetTreea_$cp2Set ::
+    GHC.Classes.Ord a => Data.Foldable.Foldable TreePrinters.Tree
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 MonoidFoldableTree.$fFoldableTree) -}
+12c1568cf562c529fcb0845711cbce98
+  $fSetTreea_$cp3Set ::
+    GHC.Classes.Ord a => MapToSet.Map TreePrinters.Tree a a
+  {- Arity: 1,
+     Strictness: <L,U(U(U,U),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 MapToSet.$fMapTreekv @ a @ a $dOrd $dOrd) -}
+812fec71230ec88639d23fa9c98d7fc9
+  $fSetTreea_$csdelete ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree (a, a) -> a -> TreePrinters.Tree (a, a)
+  {- Arity: 3,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (t :: TreePrinters.Tree (a, a))
+                   (x :: a) ->
+                 BST.delete
+                   @ (a, a)
+                   (GHC.Classes.$fOrd(,) @ a @ a $dOrd $dOrd)
+                   t
+                   (x, x)) -}
+63a378d108f2ae98572371da05f53ab2
+  $fSetTreea_$csemptySet ::
+    GHC.Classes.Ord a => TreePrinters.Tree (a, a)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
+                 TreePrinters.Leaf @ (a, a)) -}
+10083bb3b672dd1c4b5165d1c02cf5bb
+  $fSetTreea_$csfind ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree (a, a) -> a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U,A,A,A,A,A,A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (t :: TreePrinters.Tree (a, a))
+                   (k :: a) ->
+                 MapToSet.$fMapTreekv_$cmfind @ a @ a $dOrd $dOrd t (k, k)) -}
+2ff1531c9fac7441aa051893b42d6d0c
+  $fSetTreea_$csfromList ::
+    GHC.Classes.Ord a => [a] -> TreePrinters.Tree (a, a)
+  {- Arity: 2,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)><S,1*U>,
+     Unfolding: (\ @ a ($dOrd :: GHC.Classes.Ord a) (l :: [a]) ->
+                 let {
+                   $dOrd1 :: GHC.Classes.Ord (a, a)
+                   = GHC.Classes.$fOrd(,) @ a @ a $dOrd $dOrd
+                 } in
+                 letrec {
+                   go :: [a] -> TreePrinters.Tree (a, a)
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: [a]) ->
+                     case ds of wild {
+                       [] -> TreePrinters.Leaf @ (a, a)
+                       : y ys
+                       -> MonoidFoldableTree.$fMonoidTree_$cmappend
+                            @ (a, a)
+                            $dOrd1
+                            (TreePrinters.Node
+                               @ (a, a)
+                               (y, y)
+                               (TreePrinters.Leaf @ (a, a))
+                               (TreePrinters.Leaf @ (a, a)))
+                            (go ys) }
+                 } in
+                 go l) -}
+af526b1d8e5e46681318af04d890489f
+  $fSetTreea_$csinsert ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree (a, a) -> a -> TreePrinters.Tree (a, a)
+  {- Arity: 3,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (t :: TreePrinters.Tree (a, a))
+                   (x :: a) ->
+                 MonoidFoldableTree.$fMonoidTree_$cmappend
+                   @ (a, a)
+                   (GHC.Classes.$fOrd(,) @ a @ a $dOrd $dOrd)
+                   t
+                   (TreePrinters.Node
+                      @ (a, a)
+                      (x, x)
+                      (TreePrinters.Leaf @ (a, a))
+                      (TreePrinters.Leaf @ (a, a)))) -}
+e055d4e4eaa868336a6fe84a3214ce98
+  $fSetTreea_$csnext ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree (a, a) -> a -> GHC.Base.Maybe a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U(C(C1(U)),A),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (t :: TreePrinters.Tree (a, a))
+                   (x :: a) ->
+                 case BST.next1
+                        @ (a, a)
+                        (GHC.Classes.$fOrd(,) @ a @ a $dOrd $dOrd)
+                        t
+                        (x, x)
+                        (GHC.Base.Nothing @ (a, a)) of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ a
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) f s -> GHC.Base.Just @ a f } }) -}
+2648403a7423a02655b3d105bed23132
+  $fSetTreea_$cstoList ::
+    GHC.Classes.Ord a => TreePrinters.Tree (a, a) -> [a]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (w :: GHC.Classes.Ord a) (w1 :: TreePrinters.Tree (a, a)) ->
+                 MapToSet.$w$cstoList @ a w1) -}
+5f4b459f02ffc37328642a0ce4b9950a
+  $fSetTreea_$s$cstoList ::
+    TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int) -> [GHC.Types.Int]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ (t :: TreePrinters.Tree
+                           (GHC.Types.Int, GHC.Types.Int)) ->
+                 GHC.Base.map
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   @ GHC.Types.Int
+                   (Data.Tuple.fst @ GHC.Types.Int @ GHC.Types.Int)
+                   (GHC.List.reverse1
+                      @ (GHC.Types.Int, GHC.Types.Int)
+                      (MonoidFoldableTree.$fFoldableTree_$cfoldr
+                         @ (GHC.Types.Int, GHC.Types.Int)
+                         @ [(GHC.Types.Int, GHC.Types.Int)]
+                         (MapToSet.$fMapTreekv2 @ GHC.Types.Int @ GHC.Types.Int)
+                         (GHC.Types.[] @ (GHC.Types.Int, GHC.Types.Int))
+                         t)
+                      (GHC.Types.[] @ (GHC.Types.Int, GHC.Types.Int)))) -}
+94a71d7b8dc03f01564532d20a9599c2
+  $tc'C:Map :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6701200414966219424##
+                   12410376220731487029##
+                   MapToSet.$trModule
+                   MapToSet.$tc'C:Map1) -}
+8f9c806b2fa29b13986fbee5d0075d40
+  $tc'C:Map1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Map"#) -}
+5be303d04ddea3d68bbce20649eb3a54
+  $tc'C:Set :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1345464131230069006##
+                   8091182593684927316##
+                   MapToSet.$trModule
+                   MapToSet.$tc'C:Set1) -}
+0c5cd7cf85cc4fc483b4b7397d6974ba
+  $tc'C:Set1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Set"#) -}
+f3271337f75680b37b8ec74a72ae9bcc
+  $tcMap :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1203093837147669606##
+                   2087308391215488201##
+                   MapToSet.$trModule
+                   MapToSet.$tcMap1) -}
+0bacc4e7c26fff79fb4552bcaece09ff
+  $tcMap1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Map"#) -}
+bde8d643ab1f67e0502bfa0b1a1de543
+  $tcSet :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3645905939448014883##
+                   66898766240863238##
+                   MapToSet.$trModule
+                   MapToSet.$tcSet1) -}
+e3bbe4b56ed02568cc31d9e3964bce9d
+  $tcSet1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Set"#) -}
+0864aeb0e63edcf8b175eaede14c8703
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   MapToSet.$trModule2
+                   MapToSet.$trModule1) -}
+0eeafa38f88348e87a96de1b09e4ce99
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "MapToSet"#) -}
+5161108e33ea3efda7696fa72af18c6d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "hw3-0.1.0.0-AXaGW1BIMzGD78qTtHJ6tU"#) -}
+44ee7b184a35a4a9ccb14ea1777caff1
+  $w$cmfind ::
+    (GHC.Classes.Ord k, GHC.Classes.Ord v) =>
+    TreePrinters.Tree (k, v) -> k -> v -> GHC.Types.Bool
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,1*U(1*U,A,A,A,A,A,A,A)><L,1*U(1*U,A,A,A,A,A,A,A)><S,1*U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ k
+                   @ v
+                   (w :: GHC.Classes.Ord k)
+                   (w1 :: GHC.Classes.Ord v)
+                   (w2 :: TreePrinters.Tree (k, v))
+                   (ww :: k)
+                   (ww1 :: v) ->
+                 let {
+                   $dEq :: GHC.Classes.Eq k = GHC.Classes.$p1Ord @ k w
+                 } in
+                 let {
+                   $dEq1 :: GHC.Classes.Eq v = GHC.Classes.$p1Ord @ v w1
+                 } in
+                 MonoidFoldableTree.$fFoldableTree_$cfoldr
+                   @ (k, v)
+                   @ GHC.Types.Bool
+                   (\ (q :: (k, v)) (ds :: GHC.Types.Bool)[OneShot] ->
+                    case ds of wild {
+                      GHC.Types.False
+                      -> case q of ww2 { (,) ww3 ww4 ->
+                         GHC.Classes.$w$c== @ k @ v $dEq $dEq1 ww3 ww4 ww ww1 }
+                      GHC.Types.True -> GHC.Types.True })
+                   GHC.Types.False
+                   w2) -}
+5788653f3987ccea8b83b98a34de5ee1
+  $w$cstoList :: TreePrinters.Tree (a, a) -> [a]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ @ a (w :: TreePrinters.Tree (a, a)) ->
+                 GHC.Base.map
+                   @ (a, a)
+                   @ a
+                   (Data.Tuple.fst @ a @ a)
+                   (GHC.List.reverse1
+                      @ (a, a)
+                      (MonoidFoldableTree.$fFoldableTree_$cfoldr
+                         @ (a, a)
+                         @ [(a, a)]
+                         (MapToSet.$fMapTreekv2 @ a @ a)
+                         (GHC.Types.[] @ (a, a))
+                         w)
+                      (GHC.Types.[] @ (a, a)))) -}
+c89267563d7d1a7feeaf1ef81394383b
+  class (GHC.Base.Monoid (t (k, v)), Data.Foldable.Foldable t) =>
+        Map (t :: * -> *) k v where
+    memptyMap :: t (k, v)
+    mtoList :: t (k, v) -> [(k, v)]
+    mfind :: t (k, v) -> (k, v) -> GHC.Types.Bool
+    minsert :: t (k, v) -> (k, v) -> t (k, v)
+    mdelete :: t (k, v) -> (k, v) -> t (k, v)
+    mnext :: t (k, v) -> (k, v) -> GHC.Base.Maybe (k, v)
+    mfromList :: [(k, v)] -> t (k, v)
+    {-# MINIMAL memptyMap, mtoList, mfind, minsert, mdelete, mnext,
+                mfromList #-}
+bcdbbf8759e4bed3a6eeea47a2e1728b
+  class (GHC.Base.Monoid (t a), Data.Foldable.Foldable t,
+         MapToSet.Map t a a) =>
+        Set (t :: * -> *) a where
+    semptySet :: t (a, a)
+    stoList :: t (a, a) -> [a]
+    sfind :: t (a, a) -> a -> GHC.Types.Bool
+    sinsert :: t (a, a) -> a -> t (a, a)
+    sdelete :: t (a, a) -> a -> t (a, a)
+    snext :: t (a, a) -> a -> GHC.Base.Maybe a
+    sfromList :: [a] -> t (a, a)
+    {-# MINIMAL semptySet, stoList, sfind, sinsert, sdelete, snext,
+                sfromList #-}
+afb0993dccc2f0a68188d705c295ebc3
+  testt :: TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int)
+  {- Unfolding: (MonoidFoldableTree.$fMonoidTree_$cmappend
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   MapToSet.$fMapTreekv_$s$fOrd(,)
+                   MapToSet.testt10
+                   MapToSet.testt4) -}
+7a81ff00451102037695e33703948cfe
+  testt0 :: TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True)
+                (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int)) -}
+0cd708585bea830fce713390974b6c8f
+  testt1 :: GHC.Base.Maybe GHC.Types.Int
+  {- Unfolding: (case BST.next1
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        MapToSet.$fMapTreekv_$s$fOrd(,)
+                        MapToSet.testt
+                        MapToSet.testt9
+                        (GHC.Base.Nothing @ (GHC.Types.Int, GHC.Types.Int)) of wild {
+                   GHC.Base.Nothing -> GHC.Base.Nothing @ GHC.Types.Int
+                   GHC.Base.Just ds
+                   -> case ds of wild1 { (,) f s ->
+                      GHC.Base.Just @ GHC.Types.Int f } }) -}
+0184070e773d40e17be7233a5eb7c852
+  testt10 :: TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs,
+     Unfolding: (TreePrinters.Node
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   MapToSet.testt11
+                   (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int))
+                   (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int))) -}
+f4ed3a6f41c82380d88c4bcd42948be0
+  testt11 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs,
+     Unfolding: ((MapToSet.testt_x2, MapToSet.testt_x2)) -}
+0b3d54190cbc33508a874c55993dfa40
+  testt2 :: [GHC.Types.Int]
+  {- Unfolding: (MapToSet.$fSetTreea_$s$cstoList MapToSet.testt) -}
+4619679d68f006e85e44a4f2601368a4
+  testt4 :: TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int)
+  {- Unfolding: (MonoidFoldableTree.$fMonoidTree_$cmappend
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   MapToSet.$fMapTreekv_$s$fOrd(,)
+                   MapToSet.testt8
+                   MapToSet.testt5) -}
+3ef957807f7bb0f663d733d4cf6d7d2d
+  testt5 :: TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int)
+  {- Unfolding: (MonoidFoldableTree.$fMonoidTree_$cmappend
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   MapToSet.$fMapTreekv_$s$fOrd(,)
+                   MapToSet.testt6
+                   (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int))) -}
+901adda27b6bd6868ee769acf3e8772d
+  testt6 :: TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs,
+     Unfolding: (TreePrinters.Node
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   MapToSet.testt7
+                   (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int))
+                   (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int))) -}
+376a3daf06d643bf425f9841e39ab3e2
+  testt7 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs,
+     Unfolding: ((MapToSet.testt_x, MapToSet.testt_x)) -}
+852d9db8e4a3b12cf9051187e9e2fa3d
+  testt8 :: TreePrinters.Tree (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs,
+     Unfolding: (TreePrinters.Node
+                   @ (GHC.Types.Int, GHC.Types.Int)
+                   MapToSet.testt9
+                   (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int))
+                   (TreePrinters.Leaf @ (GHC.Types.Int, GHC.Types.Int))) -}
+969811c7223945389ef56f7eebd3b1c9
+  testt9 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs,
+     Unfolding: ((MapToSet.testt_x1, MapToSet.testt_x1)) -}
+387ed81daddd5afe46e0616941aea266
+  testt_x :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
+6120cc8da40c1499c12a0218e03a3c4b
+  testt_x1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+894da2551627bf621c3ba1fb2f4f5a51
+  testt_x2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+instance MapToSet.Map [TreePrinters.Tree, ., .]
+  = MapToSet.$fMapTreekv
+instance MapToSet.Set [TreePrinters.Tree, .] = MapToSet.$fSetTreea
+"SPEC $cmemptyMap @ Int @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                           GHC.Types.Int)
+                                               ($dOrd1 :: GHC.Classes.Ord GHC.Types.Int)
+  MapToSet.$fMapTreekv_$cmemptyMap @ GHC.Types.Int
+                                   @ GHC.Types.Int
+                                   $dOrd
+                                   $dOrd1
+  = MapToSet.testt0
+"SPEC $csemptySet @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                     GHC.Types.Int)
+  MapToSet.$fSetTreea_$csemptySet @ GHC.Types.Int $dOrd
+  = MapToSet.testt0
+"SPEC $cstoList @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                   GHC.Types.Int)
+  MapToSet.$fSetTreea_$cstoList @ GHC.Types.Int $dOrd
+  = MapToSet.$fSetTreea_$s$cstoList
+"SPEC/MapToSet $fEq(,) @ Int @ Int" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                               GHC.Types.Int)
+                                                    ($dEq1 :: GHC.Classes.Eq GHC.Types.Int)
+  GHC.Classes.$fEq(,) @ GHC.Types.Int @ GHC.Types.Int $dEq $dEq1
+  = MapToSet.$fMapTreekv_$s$fEq(,)
+"SPEC/MapToSet $fOrd(,) @ Int @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                                 GHC.Types.Int)
+                                                     ($dOrd1 :: GHC.Classes.Ord GHC.Types.Int)
+  GHC.Classes.$fOrd(,) @ GHC.Types.Int @ GHC.Types.Int $dOrd $dOrd1
+  = MapToSet.$fMapTreekv_$s$fOrd(,)
+"SPEC/MapToSet $fOrd(,)_$cp1Ord @ Int @ Int" [ALWAYS] forall ($dOrd :: GHC.Classes.Ord
+                                                                         GHC.Types.Int)
+                                                             ($dOrd1 :: GHC.Classes.Ord
+                                                                          GHC.Types.Int)
+  GHC.Classes.$fOrd(,)_$cp1Ord @ GHC.Types.Int
+                               @ GHC.Types.Int
+                               $dOrd
+                               $dOrd1
+  = MapToSet.$fMapTreekv_$s$fOrd(,)_$cp1Ord
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,208 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-26 09:50:02.9004286 UTC
+
+interface hw3-0.1.0.0-AXaGW1BIMzGD78qTtHJ6tU:BST 8001
+  interface hash: 3de5b6ef5dad7f67cb3c81273b2a26b6
+  ABI hash: 4bf265fdde92de9b7d4148803cf23fb7
+  export-list hash: 5e0f4ec35636350fe206142f99863921
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 365edb496d38399416a64131c77130e2
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  BST.delete
+  BST.deleteTop
+  BST.find
+  BST.fromList
+  BST.insert
+  BST.maxKey
+  BST.next
+  BST.next1
+  BST.see
+  BST.test
+  BST.toList
+module dependencies: TreePrinters
+package dependencies: base-4.9.0.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Debug.Trace 20d3743adf2ab5800d4c01c8ae9f5b53
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  base-4.9.0.0:System.IO c1068c4f4231e3198e330f99a58145b0
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  TreePrinters 7c88ec78d16b768a762b0e73a0a4a7fa
+  exports: 1bf1e04e6a8f6bccd854a07582768b28
+  Leaf 7e2b15e2e1c5c7cc338cec340a2f6b11
+  Node dd2566330da4e24ce348a749e360cbc4
+  Tree b37107482b72b58ae41406d2890ee7a9
+  verticalPrint f78148b9383624269329f9b954a02ccf
+28d31eceaa6e3156881bf11da421d3fb
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module BST.$trModule2 BST.$trModule1) -}
+6f29c2bd9cb3e0f24630744c51508af3
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "BST"#) -}
+5fe66860d85e2e9661169a7d6ae9ecc7
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "hw3-0.1.0.0-AXaGW1BIMzGD78qTtHJ6tU"#) -}
+648ca12e58be8232752061cf6dbaa284
+  $winsert ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree a
+    -> a -> (# a, TreePrinters.Tree a, TreePrinters.Tree a #)
+  {- Arity: 3,
+     Strictness: <L,U(U(C(C1(U)),A),A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U><L,U>,
+     Inline: [0] -}
+818dfffd53e13cc7d3a39f78f46674ad
+  $wmaxKey :: TreePrinters.Tree a -> a
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+13876aab2b4eb98d34e43cdaa88b4e02
+  delete ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree a -> a -> TreePrinters.Tree a
+  {- Arity: 3,
+     Strictness: <L,U(U(C(C1(U)),A),A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U><L,U> -}
+7d6b9c84db76374c98a1d5aa97667c07
+  deleteTop ::
+    GHC.Classes.Ord a => TreePrinters.Tree a -> TreePrinters.Tree a
+  {- Arity: 2,
+     Strictness: <L,U(U(C(C1(U)),A),A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U> -}
+8eaa267eca3308d09ae1d615ac42cc72
+  find ::
+    GHC.Classes.Ord a => TreePrinters.Tree a -> a -> GHC.Types.Bool
+  {- Arity: 3,
+     Strictness: <L,U(U(C(C1(U)),A),A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U><L,U> -}
+691e49de812ee75727180ac4eebc6d71
+  fromList :: GHC.Classes.Ord a => [a] -> TreePrinters.Tree a
+  {- Arity: 2,
+     Strictness: <L,U(U(C(C1(U)),A),A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U> -}
+2b2bd71b77c1ba66d105888a0e8a0baf
+  insert ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree a -> a -> TreePrinters.Tree a
+  {- Arity: 3,
+     Strictness: <L,U(U(C(C1(U)),A),A,C(C1(U)),A,C(C1(U)),A,A,A)><S,1*U><L,U>m2,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: GHC.Classes.Ord a)
+                   (w1 :: TreePrinters.Tree a)
+                   (w2 :: a) ->
+                 case BST.$winsert @ a w w1 w2 of ww { (#,,#) ww1 ww2 ww3 ->
+                 TreePrinters.Node @ a ww1 ww2 ww3 }) -}
+6827944acc57d97b7707774c20caa98a
+  maxKey :: GHC.Classes.Ord a => TreePrinters.Tree a -> a
+  {- Arity: 2, Strictness: <L,A><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (w :: GHC.Classes.Ord a) (w1 :: TreePrinters.Tree a) ->
+                 BST.$wmaxKey @ a w1) -}
+58af0e0d672a0f5c650df0e660165f73
+  next ::
+    GHC.Classes.Ord a => TreePrinters.Tree a -> a -> GHC.Base.Maybe a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(A,A,A,A,C(C1(U)),A,A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (t :: TreePrinters.Tree a)
+                   (x :: a) ->
+                 BST.next1 @ a $dOrd t x (GHC.Base.Nothing @ a)) -}
+5021ffcef02b0165cd9dedf046985f3f
+  next1 ::
+    GHC.Classes.Ord a =>
+    TreePrinters.Tree a -> a -> GHC.Base.Maybe a -> GHC.Base.Maybe a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(A,A,A,A,C(C1(U)),A,A,A)><S,1*U><L,U><L,1*U> -}
+dfca343bd7ebfb39fa0c285bdeeeeb7c
+  see :: GHC.Show.Show a => TreePrinters.Tree a -> GHC.Types.IO ()
+  {- Arity: 3, Strictness: <L,1*U(A,1*C(U),A)><L,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                BST.see1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Show.Show a>_R
+                 ->_R <TreePrinters.Tree a>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+b4d8f75e6e66c0e28d4a3beadd5158db
+  see1 ::
+    GHC.Show.Show a =>
+    TreePrinters.Tree a
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, Strictness: <L,1*U(A,1*C(U),A)><L,1*U><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (t :: TreePrinters.Tree a)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (TreePrinters.verticalPrint @ a $dShow t)
+                   GHC.Types.False
+                   eta) -}
+6c48332ade1d94f68083fab9e9bfd2e0
+  test :: TreePrinters.Tree GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (TreePrinters.Node
+                   @ GHC.Integer.Type.Integer
+                   BST.test7
+                   BST.test5
+                   BST.test1) -}
+d8d6a9f6346bf9fcbb1f1fb5d0f9cc09
+  test1 :: TreePrinters.Tree GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (TreePrinters.Node
+                   @ GHC.Integer.Type.Integer
+                   BST.test4
+                   BST.test2
+                   (TreePrinters.Leaf @ GHC.Integer.Type.Integer)) -}
+3e237bf9f7d68518ab240353bfb44a5d
+  test2 :: TreePrinters.Tree GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (TreePrinters.Node
+                   @ GHC.Integer.Type.Integer
+                   BST.test3
+                   (TreePrinters.Leaf @ GHC.Integer.Type.Integer)
+                   (TreePrinters.Leaf @ GHC.Integer.Type.Integer)) -}
+a067fc12ac3205625d1a3f2c2824b993
+  test3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (4) -}
+bf897a7eb549f15639d6b8d763d7bd7f
+  test4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (123) -}
+f682cc9c5f6b8fc74c916e0760ac70f4
+  test5 :: TreePrinters.Tree GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (TreePrinters.Node
+                   @ GHC.Integer.Type.Integer
+                   BST.test6
+                   (TreePrinters.Leaf @ GHC.Integer.Type.Integer)
+                   (TreePrinters.Leaf @ GHC.Integer.Type.Integer)) -}
+3ca6f84a1c67fa285d6e0aa6e831d057
+  test6 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+68998f6676a6fa13e3cb463a06968785
+  test7 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (3) -}
+deebb5845e31c19bbb1c351db6385934
+  toList :: TreePrinters.Tree a -> [a]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
