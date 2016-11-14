@@ -1,0 +1,14 @@
+DROP DATABASE
+CREATE DATABASE
+Вы подключены к базе данных "deanery" как пользователь "postgres".
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+ALTER TABLE
+ id | firstname | lastname | groupid 
+----+-----------+----------+---------
+(0 строк)
+
