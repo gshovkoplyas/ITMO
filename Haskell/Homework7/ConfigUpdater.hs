@@ -1,7 +1,9 @@
+{-# LANGUAGE OverloadedStrings #-}
 module ConfigUpdater where
 
-import qualified Data.Text as Txt
-import           Data.Text          (splitOn, pack, unpack, Text (..))
+import qualified Data.Text          as Txt
+import           Data.Text          (splitOn, pack, unpack, Text (..), append)
+import qualified Data.Text.IO       as TIO
 import           System.Environment (getArgs)
 import           Data.List          (head, map, length)
 import           Data.IORef         (newIORef, readIORef, writeIORef, IORef (..))
@@ -11,11 +13,10 @@ import           Data.Map.Lazy      (insert, delete, member, notMember, Map (..)
 main :: IO ()
 main = do
     args <- getArgs
-    if length args /= 1 then putStrLn "Usage: main <file_name>"
+    if length args /= 1 then TIO.putStrLn "Usage: main <file_name>"
     else do
-        src <- readFile $ head args
-        let tsrc = pack src
-        let lines_ = splitOn (pack "\n") tsrc
+        tsrc <- TIO.readFile $ head args
+        let lines_ = splitOn "\n" tsrc
         let props = parseProps lines_
         ref <- newIORef props
         run1 ref
@@ -24,7 +25,7 @@ main = do
 parseProps :: [Text] -> Map Text Text
 parseProps []     = fromList []
 parseProps (x:xs) = insert k v $ parseProps xs
-                    where (k, v) = makePair $ splitOn (pack "=") x
+                    where (k, v) = makePair $ splitOn "=" x
 
 makePair :: [Text] -> (Text, Text)
 makePair [a, b] = (a, b)
@@ -32,34 +33,33 @@ makePair [a, b] = (a, b)
 
 run1 :: IORef (Map Text Text) -> IO ()
 run1 ref = do
-    putStrLn "Inforation of usage:"
-    putStrLn " a <property> <value>: add new property"
-    putStrLn " m <property> <value>: modify property"
-    putStrLn " d <property>        : delete property"
-    putStrLn " s <file_name>       : save changes"
-    putStrLn " q                   : quit without saving"
+    TIO.putStrLn "Inforation of usage:"
+    TIO.putStrLn " a <property> <value>: add new property"
+    TIO.putStrLn " m <property> <value>: modify property"
+    TIO.putStrLn " d <property>        : delete property"
+    TIO.putStrLn " s <file_name>       : save changes"
+    TIO.putStrLn " q                   : quit without saving"
     run ref
 
 run :: IORef (Map Text Text) -> IO ()
 run ref = do
-    putStrLn "Input command:"
-    input <- getLine
-    let input_ = pack input
-    let (command, property, value) = parseCommand input_  
-    case unpack command of
+    TIO.putStrLn "Input command:"
+    input <- TIO.getLine
+    let (command, property, value) = parseCommand input  
+    case command of
         "a" -> add ref property value
         "m" -> modify ref property value
         "d" -> del ref property
         "s" -> save ref property
         "q" -> quit
-        _ -> putStrLn "Unexpected command" >> run1 ref
+        _ -> TIO.putStrLn "Unexpected command" >> run1 ref
 
 parseCommand :: Text -> (Text, Text, Text)
-parseCommand text = let ptxt = splitOn (pack " ") text
+parseCommand text = let ptxt = splitOn " " text
                     in case ptxt of 
-                            [] -> (pack "", pack "", pack "")
-                            [a] -> (a, pack "", pack "")
-                            [a, b] -> (a, b, pack "") 
+                            [] -> ("", "", "")
+                            [a] -> (a, "", "")
+                            [a, b] -> (a, b, "") 
                             [a, b, c] -> (a, b, c)
        
 quit :: IO ()
@@ -67,51 +67,51 @@ quit = return ()
 
 add :: IORef (Map Text Text) -> Text -> Text -> IO ()
 add ref property value = do
-    putStrLn "Adding:"
+    TIO.putStrLn "Adding:"
     props <- readIORef ref
     if member property props 
-    then putStrLn $ "Property '" ++ unpack property ++ "' already exists"
+    then TIO.putStrLn $ "Property '" `append` property `append` "' already exists"
     else do 
         let nprops = insert property value props 
         writeIORef ref nprops
-        putStrLn $ "Property '" ++ unpack property ++ "' added"
+        TIO.putStrLn $ "Property '" `append` property `append` "' added"
     run ref
 
 modify :: IORef (Map Text Text) -> Text -> Text -> IO ()
 modify ref property value = do
-    putStrLn "Modify:"
+    TIO.putStrLn "Modify:"
     props <- readIORef ref
     if notMember property props 
-    then putStrLn $ "Property '" ++ unpack property ++ "' doesn't exist"
+    then TIO.putStrLn $ "Property '" `append` property `append` "' doesn't exist"
     else do 
         let nprops = insert property value props
         writeIORef ref nprops
-        putStrLn $ "Property '" ++ unpack property ++ "' modified"
+        TIO.putStrLn $ "Property '" `append` property `append` "' modified"
     run ref
 
 del :: IORef (Map Text Text) -> Text -> IO ()
 del ref property = do
-    putStrLn "Deletion:"
+    TIO.putStrLn "Deletion:"
     props <- readIORef ref
     if notMember property props 
-    then putStrLn $ "Property '" ++ unpack property ++ "' doesn't exist"
+    then TIO.putStrLn $ "Property '" `append` property `append` "' doesn't exist"
     else do 
         let nprops = delete property props 
         writeIORef ref nprops
-        putStrLn $ "Property '" ++ unpack property ++ "' deleted"
+        TIO.putStrLn $ "Property '" `append` property `append` "' deleted"
     run ref
 
 
 save :: IORef (Map Text Text) -> Text -> IO ()
 save ref filename = do
-    putStrLn "Saving:"
+    TIO.putStrLn "Saving:"
     props <- readIORef ref
     let lines_ = map addEq $ toList props
     let tout = Txt.unlines lines_
-    writeFile (unpack filename) $ unpack tout
-    putStrLn $ "All progress save to '" ++ unpack filename ++ "'"
+    TIO.writeFile (unpack filename) tout
+    TIO.putStrLn $ "All progress save to '" `append` filename `append` "'"
     run ref
 
 addEq :: (Text, Text) -> Text
-addEq (l, r) = pack $ unpack l ++ "=" ++ unpack r
+addEq (l, r) = l `append` "=" `append` r
 
