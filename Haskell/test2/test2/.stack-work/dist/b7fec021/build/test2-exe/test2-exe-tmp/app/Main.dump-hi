@@ -1,0 +1,505 @@
+
+==================== FINAL INTERFACE ====================
+2016-11-07 13:48:53.1723408 UTC
+
+interface main@main:Main 8001
+  interface hash: 259de9a11075f048383c9030212c891d
+  ABI hash: 56e0288c986e06520e678919298fdb46
+  export-list hash: 46de5afe6aa95e82a653b879aac26a64
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a43dc7fc8fe451d3e2ecf1d112dc0278
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+  Main.tests
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      test2-0.1.0.0@test2-0.1.0.0-1z1UlSHf2RcLREGNNYXE5f
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Show 0b5845243cb2ec62b57dd6963d276ec6
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  base-4.9.0.0:System.IO c1068c4f4231e3198e330f99a58145b0
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  test2-0.1.0.0@test2-0.1.0.0-1z1UlSHf2RcLREGNNYXE5f:Lib b7e34ac52fa96401815cf414896eb99d
+import  -/  test2-0.1.0.0@test2-0.1.0.0-1z1UlSHf2RcLREGNNYXE5f:MaybeConcat 89b7735e2722b063d002edd30721b022
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+3e405640acfafa273f6042fabe3a3748
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+7c074101d81f3d4982ffac239a691e5e
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.main5
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.main2
+                        GHC.Types.True
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (# ipv2, GHC.Tuple.() #) } }) -}
+287733f7dd89124874d9c28f7e9580ff
+  main2 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showList__
+                   @ [GHC.Types.Char]
+                   GHC.Show.shows_$cshowList
+                   Main.main3
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+7b47cba4433187d426bfc229da255eea
+  main3 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   @ [GHC.Types.Char]
+                   Main.main4
+                   Main.tests) -}
+c033ad5696664941301b00101ca8393c
+  main4 ::
+    GHC.Base.Maybe [GHC.Integer.Type.Integer] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (\ (x :: GHC.Base.Maybe [GHC.Integer.Type.Integer]) ->
+                 case x of wild {
+                   GHC.Base.Nothing -> GHC.Show.$fShowMaybe3
+                   GHC.Base.Just b1
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        GHC.Show.$fShowMaybe1
+                        (GHC.Show.$fShowInteger_$cshowList
+                           b1
+                           (GHC.Types.[] @ GHC.Types.Char)) }) -}
+45da8fdaa04e2b66643b39b1a4a97ee0
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   Main.main6) -}
+7fbf3b08fcb2895ae735786f861e660a
+  main6 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showLitString Main.main8 Main.main7) -}
+69785b929616e18fd5119c8a154d439a
+  main7 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+9f5470f0964056ebb1f8ccda635d7f26
+  main8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "testing maybeConcat:"#) -}
+c886170ffabda139cb6db5bb80680111
+  main9 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+e3e7d5af2228c4ba6bfa7c865f4bd575
+  tests :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests62
+                   Main.tests1) -}
+9b69848e1dd5f9eb59b8128545783cd4
+  tests1 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests60
+                   Main.tests2) -}
+d1d26f18617aa92ff905aba4fa58d6b8
+  tests10 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests11) -}
+d644882d29fe953f36769f7c00496139
+  tests11 :: [GHC.Integer.Type.Integer]
+  {- Unfolding: (GHC.Enum.enumDeltaToInteger
+                   Main.tests14
+                   Main.tests13
+                   Main.tests12) -}
+30a06f29477b27a86b04738c7c589322
+  tests12 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (9) -}
+16fd17d707ca5557060bb4b45d5081fe
+  tests13 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+b84a5dab7ae44d3406bfe3b1e603e7dd
+  tests14 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+adb19dd528588ba5cd6fa5e6dc726e76
+  tests15 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests16) -}
+bf4f2048ecab29a70e6733475b2b5edc
+  tests16 :: [GHC.Integer.Type.Integer]
+  {- Unfolding: (GHC.Enum.enumDeltaToInteger1
+                   Main.tests14
+                   Main.tests17) -}
+670637f3ae9cc944a3160d49c5c6fcfd
+  tests17 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (10) -}
+358de3f28173c8f57a046306993930d5
+  tests18 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (MaybeConcat.maybeConcat
+                   @ GHC.Integer.Type.Integer
+                   Main.tests19) -}
+38742c0b573e0a3326699a6e48be00fd
+  tests19 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests36
+                   Main.tests20) -}
+8ada2f5d4c2a4f724dfb7c7ed9f5790d
+  tests2 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests58
+                   Main.tests3) -}
+545d125a06e477fa9cb57e61afe8c86e
+  tests20 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests34
+                   Main.tests21) -}
+e6c6de8970dd264267869ad5db97c31c
+  tests21 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests31
+                   Main.tests22) -}
+0d66f16bffeb729c1c0c1db068fb3b55
+  tests22 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests27
+                   Main.tests23) -}
+0e09fa55352385fcaa53173b0f9a9f61
+  tests23 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests24
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GHC.Integer.Type.Integer]))) -}
+401b48468bac2436146cae3cbfbb0232
+  tests24 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests25) -}
+4b07789ddf715cc17eeaecc14ac58309
+  tests25 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests26
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+677a86f59f51d6e0e9d87bd3bbd326a7
+  tests26 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (4) -}
+20de2e576a753f3812dac60090d1a910
+  tests27 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests28) -}
+f69c0fb50f6f764b0dcf2b06b8b342ce
+  tests28 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests17
+                   Main.tests29) -}
+2093e29c6252dcbc507a5d03be21f446
+  tests29 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests30
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+ad10631c843fcddb4523b8876fb73259
+  tests3 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests45
+                   Main.tests4) -}
+bd25b2dbace324f93e41354022fadd6e
+  tests30 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (11) -}
+f358b65f78f9d384f2a91f6059a05fc6
+  tests31 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests32) -}
+41b20cc6ef6fdaa9b1ee30e2b47c6a34
+  tests32 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests33
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+2291e931c9336e0fd1c2604074e37da9
+  tests33 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (3) -}
+a255d6a43a902c8c59164c539cc40684
+  tests34 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests35) -}
+c20634536c0ac802563360a3a7265646
+  tests35 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests13
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+c80b5663030317213c2520a44678f1e3
+  tests36 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests37) -}
+e399bdb25cd932a2e4ab68e242bfbd2c
+  tests37 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests14
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+5ab2ae716eb5f332fa05c99b0865022a
+  tests38 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (MaybeConcat.maybeConcat
+                   @ GHC.Integer.Type.Integer
+                   Main.tests39) -}
+9765ef263c7bda37771638d17740b93a
+  tests39 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   (GHC.Base.Nothing @ [GHC.Integer.Type.Integer])
+                   Main.tests40) -}
+25157a6674024e0d1876fb26be91667b
+  tests4 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests38
+                   Main.tests5) -}
+c16e8d2278e6c059963616dd9a27b272
+  tests40 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   (GHC.Base.Nothing @ [GHC.Integer.Type.Integer])
+                   Main.tests41) -}
+4dc2b5fe705abc28ed47d9a711086536
+  tests41 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests44
+                   Main.tests42) -}
+66b9d96c652163395b3a841ffc9da75f
+  tests42 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests44
+                   Main.tests43) -}
+2148d4d5fa295b6fd36be6e5f5a964f1
+  tests43 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   (GHC.Base.Nothing @ [GHC.Integer.Type.Integer])
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GHC.Integer.Type.Integer]))) -}
+8bdafc91c665c7d63cd6339830e670cc
+  tests44 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+f3707d5d3aecaac2d9a1f1ec048ccc60
+  tests45 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (MaybeConcat.maybeConcat
+                   @ GHC.Integer.Type.Integer
+                   Main.tests46) -}
+1d2142aaf3629ccd80764dcfc9937aaa
+  tests46 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests55
+                   Main.tests47) -}
+d80e993278b6cb139283cf44468d033d
+  tests47 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests44
+                   Main.tests48) -}
+4f323bb68736a2b1dc4996270dc82826
+  tests48 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests49
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GHC.Integer.Type.Integer]))) -}
+db3b36f551d138281d026473a8edb91e
+  tests49 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests50) -}
+2d4ddb9f70f2e6149c1ec54f2e789962
+  tests5 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests18
+                   Main.tests6) -}
+484fa322278a0056ce1d88281a003a89
+  tests50 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests26
+                   Main.tests51) -}
+4d4d7b14ff5851b1b72a0f7c8d4b6129
+  tests51 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests54
+                   Main.tests52) -}
+61f1fd162e0504f31501222d785a5e63
+  tests52 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests53
+                   (GHC.Types.[] @ GHC.Integer.Type.Integer)) -}
+0b92d84444570a89fcea37244ea309c4
+  tests53 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (6) -}
+56d64ca75c5b9b4e01beb5903bff23ab
+  tests54 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (5) -}
+4e43f16fd92bccb5cde0fe3149645484
+  tests55 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ [GHC.Integer.Type.Integer]
+                   Main.tests56) -}
+73e6e144c2456ea36b55eebf9657fb45
+  tests56 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests14
+                   Main.tests57) -}
+6c89e1eccfc63aa9288bc0fdba562151
+  tests57 :: [GHC.Integer.Type.Integer]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Main.tests13
+                   Main.tests32) -}
+ee25bf12f8a409222b66d62f162ba72e
+  tests58 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (MaybeConcat.maybeConcat
+                   @ GHC.Integer.Type.Integer
+                   Main.tests59) -}
+b04ceb14c5c90c4d9ee959526973efc0
+  tests59 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests55
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GHC.Integer.Type.Integer]))) -}
+c75dcdf60baaa5491aec9422226f50ad
+  tests6 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests7
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GHC.Integer.Type.Integer]))) -}
+50a4a20cc3e93954742c5051bd5d7732
+  tests60 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (MaybeConcat.maybeConcat
+                   @ GHC.Integer.Type.Integer
+                   Main.tests61) -}
+b468695ee76905ef8ed62ed97d13d8b0
+  tests61 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests44
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GHC.Integer.Type.Integer]))) -}
+6c2a6c8155a5d8f8c44055a973e59724
+  tests62 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (MaybeConcat.maybeConcat
+                   @ GHC.Integer.Type.Integer
+                   Main.tests43) -}
+0ebc0bd2b3e0c208c16fae36f0616717
+  tests7 :: GHC.Base.Maybe [GHC.Integer.Type.Integer]
+  {- Unfolding: (MaybeConcat.maybeConcat
+                   @ GHC.Integer.Type.Integer
+                   Main.tests8) -}
+f57ba3d61b7f48e465061c917c9911f9
+  tests8 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests15
+                   Main.tests9) -}
+fdbeabd4ad32414fd99faacf9a9c804f
+  tests9 :: [GHC.Base.Maybe [GHC.Integer.Type.Integer]]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GHC.Integer.Type.Integer])
+                   Main.tests10
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GHC.Integer.Type.Integer]))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

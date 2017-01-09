@@ -1,0 +1,529 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-26 10:07:02.1933068 UTC
+
+interface hw3-0.1.0.0-AXaGW1BIMzGD78qTtHJ6tU:Coins 8001
+  interface hash: d05e5a727bdacf90b8b404367532e9fb
+  ABI hash: 7f80d697a83d8e63a27cca4d67dba4b1
+  export-list hash: 26a45800191b016295f29668cfa1728e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 365edb496d38399416a64131c77130e2
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Coins.blue
+  Coins.cb1
+  Coins.cb2
+  Coins.coinCMP
+  Coins.cr1
+  Coins.createCoins
+  Coins.getColor
+  Coins.red
+  Coins.Blue
+  Coins.Coin{Coins.Coin getCoin}
+  Coins.Color{Coins.value}
+  Coins.Red
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:GHC.Base dd8044a8d640eee51828c17c476a6ba7
+import  -/  base-4.9.0.0:GHC.Err 20faef8829fd13c027d0ee2213637534
+import  -/  base-4.9.0.0:GHC.Num f0aed3315b3ed1b330b71fc4148a5581
+import  -/  base-4.9.0.0:GHC.Show 0b5845243cb2ec62b57dd6963d276ec6
+import  -/  base-4.9.0.0:Prelude 2d9cd8b0ec3d728f62b734df888d2e34
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type bc99d7d6ca3e6f7b722927a29e227674
+6f2fb986892ef6e90e1858fb7ca1c8ae
+  $fColorBlue :: Coins.Color Coins.Blue
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Coins.$fColorBlue_$cvalue
+                  `cast`
+                (Sym (Coins.N:Color[0] <Coins.Blue>_N)) -}
+f00b9c09aacc0748e024a4053f82fd21
+  $fColorBlue1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+a9026444c9c8ceee746da146c5c4a292
+  $fColorBlue_$cvalue :: Coins.Blue -> GHC.Integer.Type.Integer
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Coins.Blue) -> Coins.$fColorBlue1) -}
+6f2fb986892ef6e90e1858fb7ca1c8ae
+  $fColorRed :: Coins.Color Coins.Red
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Coins.$fColorRed_$cvalue
+                  `cast`
+                (Sym (Coins.N:Color[0] <Coins.Red>_N)) -}
+49ccd2093d009ab5544158ee9604de48
+  $fColorRed1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+9431b3c8f00008512839aecc0c08b33f
+  $fColorRed_$cvalue :: Coins.Red -> GHC.Integer.Type.Integer
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Coins.Red) -> Coins.$fColorRed1) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fMonoidCoin :: GHC.Base.Monoid (Coins.Coin a)
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a.
+                  @ (Coins.Coin a)
+                  (Coins.$fMonoidCoin_$cmempty @ a)
+                  (Coins.$fMonoidCoin_$c+ @ a)
+                  (Coins.$fMonoidCoin_$cmconcat @ a) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fMonoidCoin1 :: [Coins.Coin a] -> Coins.Coin a
+  {- Arity: 1, Strictness: <S,1*U> -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fMonoidCoin2 ::
+    Coins.Coin a -> Coins.Coin a -> GHC.Integer.Type.Integer
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (ds :: Coins.Coin a) (ds1 :: Coins.Coin a) ->
+                 GHC.Integer.Type.plusInteger
+                   ds `cast` (Coins.N:Coin[0] <a>_P)
+                   ds1 `cast` (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fMonoidCoin_$c+ :: Coins.Coin a -> Coins.Coin a -> Coins.Coin a
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.$fMonoidCoin2
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Coins.Coin a>_R
+                 ->_R <Coins.Coin a>_R
+                 ->_R Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fMonoidCoin_$cmconcat :: [Coins.Coin a] -> Coins.Coin a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (eta :: [Coins.Coin a]) ->
+                 Coins.$fMonoidCoin1 @ a eta) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fMonoidCoin_$cmempty :: Coins.Coin a
+  {- Unfolding: InlineRule (0, True, True)
+                (\ @ a -> Coins.$fColorBlue1)
+                  `cast`
+                (forall (a :: <*>_N). Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin :: GHC.Num.Num (Coins.Coin a)
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a.
+                  @ (Coins.Coin a)
+                  (Coins.$fMonoidCoin_$c+ @ a)
+                  (Coins.$fNumCoin_$c- @ a)
+                  (Coins.$fNumCoin_$c* @ a)
+                  (Coins.$fNumCoin_$cnegate @ a)
+                  (Coins.$fNumCoin_$cabs @ a)
+                  (Coins.$fNumCoin_$csignum @ a)
+                  (Coins.$fNumCoin_$cfromInteger @ a) -}
+318290deedf79ad9e017259253275a91
+  $fNumCoin1 :: GHC.Integer.Type.Integer -> GHC.Integer.Type.Integer
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (x :: GHC.Integer.Type.Integer) -> x) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin2 :: Coins.Coin a -> GHC.Integer.Type.Integer
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m1,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (x :: Coins.Coin a) ->
+                 GHC.Integer.Type.signumInteger x `cast` (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin3 :: Coins.Coin a -> GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (x :: Coins.Coin a) ->
+                 GHC.Integer.Type.absInteger x `cast` (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin4 :: Coins.Coin a -> GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a (x :: Coins.Coin a) ->
+                 GHC.Integer.Type.negateInteger x `cast` (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin5 ::
+    Coins.Coin a -> Coins.Coin a -> GHC.Integer.Type.Integer
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (x :: Coins.Coin a) (y :: Coins.Coin a) ->
+                 GHC.Integer.Type.timesInteger
+                   x `cast` (Coins.N:Coin[0] <a>_P)
+                   y `cast` (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin6 ::
+    Coins.Coin a -> Coins.Coin a -> GHC.Integer.Type.Integer
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a (x :: Coins.Coin a) (y :: Coins.Coin a) ->
+                 GHC.Integer.Type.minusInteger
+                   x `cast` (Coins.N:Coin[0] <a>_P)
+                   y `cast` (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin_$c* :: Coins.Coin a -> Coins.Coin a -> Coins.Coin a
+  {- Arity: 2, Strictness: <S,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.$fNumCoin5
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Coins.Coin a>_R
+                 ->_R <Coins.Coin a>_R
+                 ->_R Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin_$c- :: Coins.Coin a -> Coins.Coin a -> Coins.Coin a
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.$fNumCoin6
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Coins.Coin a>_R
+                 ->_R <Coins.Coin a>_R
+                 ->_R Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin_$cabs :: Coins.Coin a -> Coins.Coin a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.$fNumCoin3
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Coins.Coin a>_R ->_R Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin_$cfromInteger :: GHC.Integer.Type.Integer -> Coins.Coin a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.$fNumCoin1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Integer.Type.Integer>_R ->_R Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin_$cnegate :: Coins.Coin a -> Coins.Coin a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.$fNumCoin4
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Coins.Coin a>_R ->_R Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fNumCoin_$csignum :: Coins.Coin a -> Coins.Coin a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m1,
+     Unfolding: InlineRule (0, True, True)
+                Coins.$fNumCoin2
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Coins.Coin a>_R ->_R Sym (Coins.N:Coin[0] <a>_P)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fShowCoin :: GHC.Show.Show (Coins.Coin color)
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ color.
+                  @ (Coins.Coin color)
+                  (Coins.$fShowCoin_$cshowsPrec @ color)
+                  (Coins.$fShowCoin_$cshow @ color)
+                  (Coins.$fShowCoin_$cshowList @ color) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fShowCoin1 :: Coins.Coin color -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ @ color
+                   (w :: Coins.Coin color)
+                   (w1 :: GHC.Base.String) ->
+                 Coins.$w$cshowsPrec @ color 0# w w1) -}
+7f0110450c05a3ac938f7c34fa9a2455
+  $fShowCoin2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+f77dbbc4f8a002d14c4b3f1837a53751
+  $fShowCoin3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "getCoin = "#) -}
+3d4839f7dd87e3cc79d4e67c1f6defbf
+  $fShowCoin4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Coin {"#) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fShowCoin_$cshow :: Coins.Coin color -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ color (x :: Coins.Coin color) ->
+                 Coins.$fShowCoin_$cshowsPrec
+                   @ color
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fShowCoin_$cshowList :: [Coins.Coin color] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ @ color ->
+                 GHC.Show.showList__
+                   @ (Coins.Coin color)
+                   (Coins.$fShowCoin1 @ color)) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $fShowCoin_$cshowsPrec ::
+    GHC.Types.Int -> Coins.Coin color -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ color
+                   (w :: GHC.Types.Int)
+                   (w1 :: Coins.Coin color)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Coins.$w$cshowsPrec @ color ww1 w1 w2 }) -}
+59fe7974e8d0137a6c8a5443a7dbefe1
+  $tc'C:Color :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12769517188451751192##
+                   9516682189656445550##
+                   Coins.$trModule
+                   Coins.$tc'C:Color1) -}
+5295e7b378cd698e5d2011126a4c388a
+  $tc'C:Color1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Color"#) -}
+db534c36abd23e3ead387f36ed5ca86b
+  $tc'Coin :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8295090780764200511##
+                   10726235981240917281##
+                   Coins.$trModule
+                   Coins.$tc'Coin1) -}
+8ef13def60dc21f596e5e247d9542ea2
+  $tc'Coin1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Coin"#) -}
+a67436f04f2c19f1fc01e5a6dcd03062
+  $tcBlue :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8254939408205788085##
+                   4049029935793697948##
+                   Coins.$trModule
+                   Coins.$tcBlue1) -}
+b8b350773517581746ce65eda4589fd8
+  $tcBlue1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Blue"#) -}
+13245bdf2f78a629d7bcc9f604eb3a0f
+  $tcCoin :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2981753304631769660##
+                   1527174627683518081##
+                   Coins.$trModule
+                   Coins.$tcCoin1) -}
+b0ec9c21d6e3675d289eee53cafa9cf1
+  $tcCoin1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Coin"#) -}
+4e29a2b911ea90e0eded6e3f22183307
+  $tcColor :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13648795861914060702##
+                   3600327881065608873##
+                   Coins.$trModule
+                   Coins.$tcColor1) -}
+0bb725740671372e9850dbdf665c4e82
+  $tcColor1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Color"#) -}
+60df10cf5a31a1bb9ade24af3e6af33b
+  $tcRed :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9832009854230025289##
+                   9957977948159059539##
+                   Coins.$trModule
+                   Coins.$tcRed1) -}
+acacd5c35eac09d548f17e66434f8faf
+  $tcRed1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Red"#) -}
+8b6c8f965e408af7d7a209b92d60bb0b
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Coins.$trModule2 Coins.$trModule1) -}
+b76c1ada5cb9c8223d417783c8386cf9
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Coins"#) -}
+d75febfe7b872bbe7e8e4ab754e088e6
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "hw3-0.1.0.0-AXaGW1BIMzGD78qTtHJ6tU"#) -}
+d4e06c5ea1adb93572e23a40a35d67d6
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Coins.Coin color -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><L,U><L,U>, Inline: [0],
+     Unfolding: (\ @ color
+                   (ww :: GHC.Prim.Int#)
+                   (w :: Coins.Coin color)
+                   (w1 :: GHC.Base.String) ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String)[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Coins.$fShowCoin4
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Coins.$fShowCoin3
+                          (case GHC.Show.$w$cshowsPrec3
+                                  0#
+                                  w `cast` (Coins.N:Coin[0] <color>_P)
+                                  (GHC.Base.++
+                                     @ GHC.Types.Char
+                                     Coins.$fShowCoin2
+                                     x) of ww2 { (#,#) ww3 ww4 ->
+                           GHC.Types.: @ GHC.Types.Char ww3 ww4 }))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p w1
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 w1)) }) -}
+e6e3c12b9e8bd1e20499ef48df2006b5
+  data Blue
+d4e06c5ea1adb93572e23a40a35d67d6
+  type role Coin phantom
+  newtype Coin color = Coin {getCoin :: GHC.Integer.Type.Integer}
+6f2fb986892ef6e90e1858fb7ca1c8ae
+  class Color a where
+    value :: a -> GHC.Integer.Type.Integer
+    {-# MINIMAL value #-}
+51cce9d4724fe1621702d2498818fe01
+  data Red
+9af6baae4de221a8d352d91315ff1c88
+  blue :: Coins.Blue
+  {- Strictness: x -}
+9aa725b0549bd5d5e1121a2ee2448cc3
+  cb1 :: Coins.Coin Coins.Blue
+  {- Unfolding: InlineRule (0, True, True)
+                Coins.cb4 `cast` (Sym (Coins.N:Coin[0] <Coins.Blue>_P)) -}
+851e2a836b6742698293b5bab8d9c470
+  cb2 :: Coins.Coin Coins.Blue
+  {- Unfolding: InlineRule (0, True, True)
+                Coins.cb5 `cast` (Sym (Coins.N:Coin[0] <Coins.Blue>_P)) -}
+1b7faa6f54184e3e966714dd6448a95f
+  cb4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (9) -}
+11cafb28c201da41a04c0c41da45033b
+  cb5 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (10) -}
+9967204ae1b80a02d3ba2b393e9076ec
+  coinCMP ::
+    (Coins.Color a, Coins.Color b) =>
+    Coins.Coin a -> Coins.Coin b -> GHC.Types.Ordering
+  {- Arity: 4, Strictness: <C(S),C(U)><C(S),C(U)><L,1*U><L,1*U>,
+     Unfolding: (\ @ a
+                   @ b
+                   ($dColor :: Coins.Color a)
+                   ($dColor1 :: Coins.Color b)
+                   (x :: Coins.Coin a)
+                   (y :: Coins.Coin b) ->
+                 case GHC.Integer.Type.eqInteger#
+                        ($dColor `cast` (Coins.N:Color[0] <a>_N) (Coins.coinCMP2 @ a))
+                        ($dColor1 `cast` (Coins.N:Color[0] <b>_N)
+                           (Coins.coinCMP2 @ b)) of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False
+                   -> case GHC.Integer.Type.ltInteger#
+                             ($dColor `cast` (Coins.N:Color[0] <a>_N) (Coins.coinCMP2 @ a))
+                             ($dColor1 `cast` (Coins.N:Color[0] <b>_N)
+                                (Coins.coinCMP2 @ b)) of wild2 { DEFAULT ->
+                      case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 of wild3 {
+                        GHC.Types.False
+                        -> case GHC.Integer.Type.gtInteger#
+                                  ($dColor `cast` (Coins.N:Color[0] <a>_N) (Coins.coinCMP2 @ a))
+                                  ($dColor1 `cast` (Coins.N:Color[0] <b>_N)
+                                     (Coins.coinCMP2 @ b)) of wild4 { DEFAULT ->
+                           case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild4 of wild5 {
+                             GHC.Types.False -> Coins.coinCMP1
+                             GHC.Types.True -> GHC.Types.GT } }
+                        GHC.Types.True -> GHC.Types.LT } }
+                   GHC.Types.True
+                   -> GHC.Integer.Type.compareInteger
+                        x `cast` (Coins.N:Coin[0] <a>_P)
+                        y `cast` (Coins.N:Coin[0] <b>_P) } }) -}
+99f3aaafc1a1d4f660bd5a548ab48ff0
+  coinCMP1 :: GHC.Types.Ordering
+  {- Strictness: x -}
+3dee29ec7654197b4a8717d1ed78e851
+  coinCMP2 :: color
+  {- Strictness: x -}
+84e8defeaf0c77357dd4e22ac65e3f7a
+  cr1 :: Coins.Coin Coins.Red
+  {- Unfolding: InlineRule (0, True, True)
+                Coins.cr2 `cast` (Sym (Coins.N:Coin[0] <Coins.Red>_P)) -}
+7e45692a2e7a8bb746005db1f79e55ac
+  cr2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (5) -}
+c4738d4597f7aa6906bbe22793a5e61a
+  createCoins ::
+    color -> GHC.Integer.Type.Integer -> Coins.Coin color
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.createCoins1
+                  `cast`
+                (forall (color :: <*>_N).
+                 <color>_R
+                 ->_R <GHC.Integer.Type.Integer>_R
+                 ->_R Sym (Coins.N:Coin[0] <color>_P)) -}
+a2bdcb85d53dd05efbf5860e55a9d152
+  createCoins1 ::
+    color -> GHC.Integer.Type.Integer -> GHC.Integer.Type.Integer
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ color (ds :: color) (tpl :: GHC.Integer.Type.Integer) ->
+                 tpl) -}
+314bc8ee0a68d2c6f8c6866338959837
+  getCoin :: Coins.Coin color -> GHC.Integer.Type.Integer
+  RecSel Left Coins.Coin
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Coins.getCoin1
+                  `cast`
+                (forall (color :: <*>_N).
+                 <Coins.Coin color>_R ->_R Coins.N:Coin[0] <color>_P) -}
+b5e6dbc4b8980dfb5aeb0db03bb2e84f
+  getCoin1 :: Coins.Coin color -> Coins.Coin color
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ color (ds :: Coins.Coin color) -> ds) -}
+7585cd7f7ce07a547eeb3f7465987009
+  getColor :: Coins.Coin color -> color
+  {- Arity: 1, Strictness: <B,A>x,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ color (ds :: Coins.Coin color) -> Coins.coinCMP2 @ color) -}
+fcc46711b7e7078de80474b6af00627e
+  red :: Coins.Red
+  {- Strictness: x -}
+instance [safe] Coins.Color [Coins.Blue] = Coins.$fColorBlue
+instance [safe] Coins.Color [Coins.Red] = Coins.$fColorRed
+instance [safe] GHC.Base.Monoid [Coins.Coin] = Coins.$fMonoidCoin
+instance [safe] GHC.Num.Num [Coins.Coin] = Coins.$fNumCoin
+instance [safe] GHC.Show.Show [Coins.Coin] = Coins.$fShowCoin
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
